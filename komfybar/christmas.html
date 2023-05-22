@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOMFYBAR</title>
+
+  <meta name="naver-site-verification" id="whiskyoption" content="fe542057afbdaa1c3f7e67baec463661a493df3e" />
+
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Starbucks" />
+  <meta property="og:title" content="KOMFY STUDIO" />
+  <meta property="og:description" id="whiskyoption" content="아마도 합정 최고의 와인바" />
+  <meta property="og:image" content="./images/starbucks_seo.jpg" />
+  <meta property="og:url" content="https://www.komfy.kr" />
+
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="KOMFY STUDIO" />
+  <meta property="twitter:title" content="KOMFY STUDIO" />
+  <meta property="twitter:description" id="whiskyoption" content="아마도 합정 최고의 와인바" />
+  <meta property="twitter:image" content="./images/starbucks_seo.jpg" />
+  <meta property="twitter:url" content="https://www.komfy.kr" />
+
+  <link rel="icon" href="./favicon1.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/menu.css" />
+  <link rel="stylesheet" href="./css/tab.css" />
+  <link rel="stylesheet" href="./css/orderbar.css" />
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/3a98133f4f.js" crossorigin="anonymous"></script>
+  <script defer src="./js/tab.js"></script>
+  <script defer src="./js/main.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="inner">
+
+      <div class="menu">
+        <a href="./index.html" class="logo">
+          <img src="./images/komfylogo.png" alt="komfy">
+        </a>
+
+        <!-- <div class="main-menu">
+
+          <li><a class="secondary-menu" href="./index.html"><span> HOME</span
+            </div>  ></a></li>
+          <li><a class="secondary-menu" href="./menu.html"><span>MENU</span></a></li>
+          <li><a class="secondary-menu" href="./contact.html"><span>HOURS+CONTACT</span></a></li>
+          <li><a class="secondary-menu" href="https://open.spotify.com/playlist/4ogKvEpxpA0aR4ImeIhHKu"><span>RADIO</span></a></li>
+        </div> -->
+
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <!-- 탭 메뉴 상단 시작 -->
+    <ul class="tabs">
+      <li class="tab-link current" data-tab="tab-1">NOTICE</li>
+      <li class="tab-link" data-tab="tab-6">Wine Bottles</li>
+    </ul>
+    <!-- 탭 메뉴 상단 끝 -->
+    <!-- 탭 메뉴 내용 시작 -->
+    <div id="tab-1" class="tab-content current">
+      <div class="notice">
+
+        <div class="topTitle">
+          NOTICE
+        </div>
+        <div class="menu-container">
+        <p>*크리스마스 이브 / 당일은 테이블 타임 100분입니다.</p>
+        <br>
+        <p>*세트메뉴 음식은 딸기 부라타 / 라구 파스타 / 부채살 스테이크로 구성되어있습니다.(68000원)</p>
+        <br>
+        <p>*크리스마스 기간에는 와인 보틀과 세트메뉴 주문이 기본 주문입니다.</p>
+        <br>
+        <p>*Wine Bottles탭을 누르신 후 와인을 고른 후 오더를 눌러주시면 주문이 완료 됩니다. 와인을 고르시면 음식도 자동으로 주문되어 서빙됩니다.</p>
+        <br>
+        <p>*와이파이 비밀번호 ilovekomfy1</p>
+      </div>
+      
+
+        <div class="menu-container-left">
+<br>
+          <img src="./images/main2.jpg" width="500px" alt="">
+        </div>
+    </div>
+    </div>
+  <div id="tab-6" class="tab-content">
+    <div class="menuContainer">
+      <div class="container-head">
+
+        <div class="topTitle">
+          WINE
+        </div>
+      </div>
+      <div class="menu-container">
+
+        <div class="menu-container-left">
+
+          <h1>RED WINE</h1><br>
+          <h2>Juan Gil yellow label | Monastrell | Spain | #juicy #tannic #oak #chocolate #juicy #blackberry | 68</h2>
+          <h3>알콜 14.5% 바디감 ★★★☆☆ 당도 ★★☆☆☆ 산도 ★★☆☆☆</h3>
+          <div class="btn" onclick="menuAdd('red1', 'juangil X')">+Add</div><br>
+          <h2>TroubleMaker | Syrah, grenache | USA | #dry #tannin #oak #bold #vanilla #chocolate #plum | 75</h2>
+          <h3>알콜 14% 바디감 ★★★★☆ 당도 ★★☆☆☆ 산도 ★★☆☆☆</h3>
+          <div class="btn" onclick="menuAdd('red2', 'TroubleMaker X')">+Add</div><br>
+          <h2>Azimut Negre (Natural) | Monastrell | Spain | #cherry #strawberry #blackberry #mineral | 78</h2>
+          <h3>알콜 14.5% 바디감 ★★☆☆☆ 당도 ★★☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('red3', 'Azimut Negre X')">+Add</div><br>
+          <h2>Sasyr Toscana | Sangivese, syrah | Italy #dry #plum #blackberry #cherry #oak | 80</h2>
+          <h3>알콜 14% 바디감 ★★☆☆☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('red4', 'Sasyr Toscana X')">+Add</div><br>
+          <h2>El picaro | Tempranillo | Spain | #oak #vanilla #chocolate #blueberry #plum | 78</h2>
+          <h3>알콜 14% 바디감 ★★★★☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('red5', 'El picaro X')">+Add</div><br>
+          <h2>Take it to the grave | Shiraz | Auastralia | #tannic #plum #oak #chocolate #pepper | 84 </h2>
+          <h3>알콜 14.5% 바디감 ★★★★☆ 당도 ★☆☆☆☆ 산도 ★★☆☆☆</h3>
+          <div class="btn" onclick="menuAdd('red6', 'Take it to the grave Shiraz X')">+Add</div><br>
+          <h2>Pierre Pradelle Pipelette(Natural) | Gamay, pinot noir | France | #light #mild #juicy #flavor | 88</h2>
+          <h3>알콜 12% 바디감 ★☆☆☆☆ 당도 ★★★☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('red7', 'Pierre X')">+Add</div><br>
+
+          <h2>Paso robles Merlot 2019 | Merlot | USA | #mild #butter #smoky #dry | 86</h2>
+          <h3>알콜 14.5% 바디감 ★★★☆☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('red8', 'Paso robles Merlot X')">+Add</div><br>
+          <h2>Chateau Copsa Rouge | Merlot | Bulgaria| #Oak #vanilla #Plum #blueberry #smoke | 89</h2>
+          <h3>알콜 14.5% 바디감 ★★★★☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('red9', 'Chateau Copsa Rouge X')">+Add</div><br>
+          <h2>Single parcel Insitu | Cabernat sauvignon | Chille #blackberry #dark cherry #earthy #stone | 88</h2>
+          <h3>알콜 14.5% 바디감 ★★★☆☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('red10', 'Single Parcel Insitu X')">+Add</div><br>
+          <h2>Coulee douce 2020  | Pinot noir | France | #mild #fruity #juicy | 92</h2>
+          <h3>알콜 14% 바디감 ★★☆☆☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('red11', 'Coulee douce 2020 X')">+Add</div><br>
+          <h2>Badboys de Bordeaux (Natural) | Malbec | Spain | #tannic #medium-body #bold #tannic | 94 </h2>
+          <h3>알콜 14% 바디감 ★★★★☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('red12', 'Badboys X')">+Add</div><br>
+          <h2>Take it to the grave | Cabernat Sauvignon | Auastralia | #tannic #plum #oak #chocolate #pepper | 84 </h2>
+          <h3>알콜 14.5% 바디감 ★★★★☆ 당도 ★☆☆☆☆ 산도 ★★☆☆☆</h3>
+          <div class="btn" onclick="menuAdd('red13', 'Take it to the grave Cabernat X')">+Add</div><br>
+          <h2> Elephant in the room | Pinot noir | Auastralia | #mild #fruity #juicy | 92</h2>
+          <h3>알콜 14% 바디감 ★★☆☆☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('red14', 'elephant in the room X')">+Add</div><br>
+
+          <h1>White WINE</h1><br>
+          <h2>Russian Jack | sauvignon Blanc | Newzealand | #aroma #sharp #fruity #green grape | 68</h2>
+          <h3>알콜 13% 바디감 ★★☆☆☆ 당도 ★★☆☆☆ 산도 ★★★★☆</h3>
+          <div class="btn" onclick="menuAdd('white1', 'Russain jack X')">+Add</div><br>
+          <h2>Catherine Marshall | Riesling | South Africa | #fresh #fruity #lime #apple | 72</h2></a>
+          <h3>알콜 12% 바디감 ★★☆☆☆ 당도 ★★☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('white2', 'Catherine Marshall X')">+Add</div><br>
+          <h2>La cour des dames | Chardonnay | France | #medium-body #Dry #Oak #apple | 74</h2>
+          <h3>알콜 12% 바디감 ★★★☆☆ 당도 ★★☆☆☆ 산도 ★★☆☆☆</h3>
+          <div class="btn" onclick="menuAdd('white3', 'La cour des dames X')">+Add</div><br>
+          <h2>La cour des dames | Vigonier | France | #medium-body #Dry #Soft #silky | 76</h2>
+          <h3>알콜 12% 바디감 ★★★☆☆ 당도 ★★☆☆☆ 산도 ★★☆☆☆</h3>
+          <div class="btn" onclick="menuAdd('white4', 'La cour des dames X')">+Add</div><br>
+
+          <h2>Azimut Blanc (Natural) | Macabeau | Spain | #mineral #daily #pure #earthy #citrus | 78</h2>
+          <h3>알콜 13% 바디감 ★★☆☆☆ 당도 ★★☆☆☆ 산도 ★★★★☆</h3>
+          <div class="btn" onclick="menuAdd('white5', 'Azimut Blanc X')">+Add</div><br>
+          <h2>Gessami | Sauvignon Blanc, Muscat, Gewurztraminer | Spain #whiteflower #flavor #peach #flower| 80</h2>
+          <h3>알콜 11% 바디감 ★★☆☆☆ 당도 ★★★☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('white6', 'Gessami X')">+Add</div><br>
+          <h2>Limestone Hill | Chardonnay | South Africa | #semi-dry #aroma #citrus #apple #pear | 82</h2>
+          <h3>알콜 12% 바디감 ★★☆☆☆ 당도 ★☆☆☆☆ 산도 ★★☆☆☆</h3>
+          <div class="btn" onclick="menuAdd('white7', 'Limestone Hill X')">+Add</div><br>
+          <h2>Life from stone | sauvignon Blanc| South Africa | #earthy #aroma #passionfruit #citurs #tropical | 86
+          </h2>
+          <h3>알콜 12.5% 바디감 ★★☆☆☆ 당도 ★★☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('white8', 'Life from stone X')">+Add</div><br>
+          <h2>Side one (Natural Orange) | Muscat, Malvasia | Spain | #fresh #sparkling #tropical #lychee | 88</h2>
+          <h3>알콜 12% 바디감 ★☆☆☆☆ 당도 ★★☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('white9', 'Side one X')">+Add</div><br>
+
+          <h1>Sparkling WINE</h1><br>
+
+          <h2>Louis Perdrier | Chardonnay | France | #semi-dry #citurs #mineral #lemon #medium bubble | 55</h2>
+          <h3>알콜 11% 바디감 ★★☆☆☆ 당도 ★★☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('sparkling1', 'Louis Perdrier X')">+Add</div><br>
+          <h2>Gota de Maravilla | Cava | Spain | #semi-dry #apple #fresh #citurs | 57</h2>
+          <h3>알콜 11.5% 바디감 ★★★☆☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('sparkling2', 'Gota de Maravilla X')">+Add</div><br>
+          <h2>Sprin toso Spumante | Moscato | Italy #sweet #melon #clean #green apple | 59</h2>
+          <h3>알콜 14% 바디감 ★★★☆☆ 당도 ★★★★☆ 산도 ★★★☆☆</h3>
+          <div class="btn" onclick="menuAdd('sparkling3', 'Spumante X')">+Add</div><br>
+
+
+
+          <h1>Port WINE (SWEET)</h1><br>
+          <h2>Tawny PORTO | Portugal | #sweet #vanilla #fuity #ripe | 72</h2>
+          <h3>알콜 19.5% 바디감 ★★★★☆ 당도 ★★★★★ </h3>
+          <div class="btn" onclick="menuAdd('port1', 'Tawny Porto X')">+Add</div><br>
+          <h2>White Porto | Portugal | #more-sweet #vanilla | 74</h2>
+          <h3>알콜 19.5% 바디감 ★★☆☆☆ 당도 ★★★★★ </h3>
+          <div class="btn" onclick="menuAdd('port2', 'White porto X')">+Add</div><br>
+
+        </div>
+      </div>
+      <div class="topTitle">
+
+      </div>
+
+    </div>
+  </div>
+  <div id="tab-7" class="tab-content">
+  </div>
+  <!-- 탭 메뉴 내용 끝 -->
+
+  </div>
+  <main>
+
+
+
+
+
+  </main>
+  <footer>
+
+    <div class="inner">
+      <br>
+      <a href="https://www.instagram.com/komfybar" class="logo">
+        <img src="./images/komfylogo3.png" alt="komfy">
+      </a>
+
+      <a href="https://www.instagram.com/komfybar"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+
+  </footer>
+  <div class="header" id="menubar">
+    <div class="header-inner">
+      <div class="btn-group" id="menuadd">
+
+      </div>
+      <div class="btn-group">
+
+
+        <div class="btn btn-order" onclick="order()">
+          order
+        </div>
+        <div class="btn btn-subtotal" id="total_count">
+          total count :
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

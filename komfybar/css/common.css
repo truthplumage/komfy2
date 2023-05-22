@@ -1,0 +1,168 @@
+/* COMMON */
+
+.inner {
+  width: 80%;
+  margin: 0 auto;
+}
+a {
+	text-decoration: none;
+}
+a:visited {
+	color: #000;
+	
+}
+@font-face {
+    font-family: 'broadway';
+    src: url('./fonts/Broadway.ttf') format("truetype");
+}
+
+
+/* HEADER */
+
+header{
+
+}
+header .mainLogo {
+	
+}
+header .mainLogo img {
+	width: 150px;
+}
+header .inner{
+	margin: 0 auto;	
+}
+header .navbar{
+	padding: 15px;
+	box-sizing: border-box;	
+}
+header .navbar .navbar-menu{
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	box-sizing: border-box;
+	padding-left: -40px;
+}
+header .navbar .navbar-menu .navbar-menu-items{
+	margin-right: 10px;
+	border: 3px solid black;
+	box-sizing: border-box;
+	padding: 3px;
+	font-weight: 700;
+	font-size : 15px;
+}
+header .navbar .navbar-menu .navbar-menu-items:hover {
+	color: #fff;
+	background-color: #000;
+	cursor: pointer;
+}
+
+/* main */
+main {
+
+}
+main .inner{
+
+}
+main .inner img {
+	width: 100%;
+	
+}
+.mobileBack {
+	display: none;
+}
+
+/* footer */
+footer {
+
+}
+footer .inner {
+	margin: 0 auto;
+	align-items: center;
+	border-top: 2px solid black;
+	margin: 30px ;
+	padding: 20px;
+	
+}
+footer .inner i {
+	
+}
+footer .inner img {
+	width: 150px;
+}
+
+/* CONTACT */
+.contactText {
+	text-align: center;
+}
+.contactText h1 {
+    font-family: 'broadway';
+	font-size: 45px;
+}
+.contactText img {
+	width: 30px ;
+}
+.contactText a {
+	width: 30px ;
+}
+.contactText h2 {
+	font-weight: 600;
+}
+
+
+
+
+
+/* 미디어 스크린 쿼리 */
+
+@media all and (min-width:768px) and (max-width:1023px) { 
+  main .inner {
+		width: 100%;
+	}
+	.desktopBack {
+		display: none;
+	}
+	.mobileBack {
+		display: block;
+	}
+} 
+
+/* 테블릿 세로 (해상도 768px ~ 1023px)*/ 
+@media all and (min-width:768px) and (max-width:1023px) { 
+  main .inner {
+		width: 100%;
+	}
+	.desktopBack {
+		display: none;
+	}
+	.mobileBack {
+		display: block;
+	}
+} 
+
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (min-width:480px) and (max-width:767px) {
+	main .inner{
+		
+		width: 100%;
+	}
+	.desktopBack {
+		display: none;
+	}
+	.mobileBack {
+		display: block;
+	}
+} 
+
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+@media all and (max-width:479px) {
+  main .inner{
+		width: 100%;
+	}
+	.desktopBack {
+		display: none;
+	}
+	.mobileBack {
+		display: block;
+	}
+}

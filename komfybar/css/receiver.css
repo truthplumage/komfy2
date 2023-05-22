@@ -1,0 +1,143 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrap {
+    padding: 40px 0;
+    background-color: #A8C0D6;
+}
+
+.wrap .chat {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.wrap .chat .icon {
+    position: relative;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    background-color: #eee;
+    text-align: center;
+}
+
+.wrap .chat .icon i {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 3rem;
+    font-size: 1rem;
+    color: #000;
+    font-weight: 700;
+    transform: translateX(-50%);
+}
+
+.wrap .chat .textbox {
+    position: relative;
+    display: inline-block;
+    max-width: calc(100% - 70px);
+    padding: 10px;
+    margin-top: 7px;
+    font-size: 18px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+.wrap .checkBox {
+    display: flex;
+}
+.wrap .checkBox .item {
+    width: fit-content;
+    border: 2px solid black;
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 5px;
+    margin: 3px;
+    margin-top: 40px;
+    box-sizing: border-box;
+    background-color: #eee;
+
+}
+.wrap .chat #orderCheck {
+
+}
+
+.wrap .chat .textbox::before {
+    position: absolute;
+    display: block;
+    top: 0;
+    font-size: 1.5rem;
+}
+.wrap .ch1 {
+  position: relative;
+}
+.wrap .ch1 .textbox {
+    margin-left: 20px;
+    background-color: #ddd;
+}
+
+.wrap .ch1 .textbox::before {
+    left: -15px;
+    content: "◀";
+    color: #ddd;
+}
+
+.wrap .ch2 {
+    flex-direction: row-reverse;
+}
+.time1 {
+  left: 10%;
+  position: absolute;
+  font-size: 13px;
+}
+.time2 {
+
+  right: 10%;
+  position: absolute;
+  font-size: 13px;
+}
+
+.wrap .ch2 .textbox {
+    margin-right: 20px;
+    background-color: #F9EB54;
+}
+
+.wrap .ch2 .textbox::before {
+    right: -15px;
+    content: "▶";
+    color: #F9EB54;
+}
+.modal {
+    width: 50%;
+    border: 3px solid black;
+    border-radius: 4px;
+    margin: 0 auto;
+    font-weight: 700;
+    background-color: #eee;
+    text-align: center;
+    
+    
+    z-index: 9999;
+}
+#delteModal{
+    position: relative;
+}
+.modal .btn {
+    border-radius: 80%;
+}
+
+.modal-select {
+    width: 50%;
+    display: flex;
+    margin: 0 auto;
+}
+.modal-select .btn {
+    width: 50%;
+}

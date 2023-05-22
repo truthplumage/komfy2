@@ -1,0 +1,39 @@
+[
+  {"title":"1. 택배들이기",
+   "isCheck":"false"
+  },
+
+  {"title":"1. 택배들이기",
+  "isCheck":"false"
+  },
+  {"title":"4. 화장실",
+  [
+    {"title":"쓰레기통 비우기",
+    "isCheck":"false"
+    },
+    {"title":"변기통 세정제 뿌리고 솔질",
+    "isCheck":"false"
+    },
+    {"title":"바닥 세정제 뿌리고 솔질",
+    "isCheck":"false"
+    },
+    {"title":"샤워기로 솔질한 부분 전체적으로 뿌리기",
+    "isCheck":"false"
+    },
+    {"title":"휴지 채우기",
+    "isCheck":"false"
+    },
+
+  ]
+  }
+  {"title":"5. 의자 내리기",
+  "isCheck":"false"
+  },
+  {"title":"6. 커틀러리 세팅",
+  "isCheck":"false"
+  },
+  {"title":"7. 와인 냉장고에 채우기",
+  "isCheck":"false"
+  }
+
+]

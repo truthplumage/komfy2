@@ -1,0 +1,248 @@
+body {
+    line-height: 150%;
+    background-color: #f9e8c7;
+}
+
+main {
+}
+
+.btn {
+  width:15%;
+
+  border: 2px solid #333;
+  border-radius: 50px;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 900px;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: block;
+  background-color: #eee;
+
+}
+
+.whiskyOptionBtn .btn{
+    width: fit-content;
+    padding: 5px;
+}
+
+.logobox {
+    margin-bottom: 10%;
+}
+.logobox .logo {
+    width: 100%;
+    font-family: 'broadway';
+    font-size: 3rem;
+    text-align: center;
+    padding: 4%;
+    box-sizing: border-box;
+}
+#notice #complete {
+  font-size: 2rem;
+
+}
+#notice {
+  
+    height: 50vh;
+
+}
+#notice2 {
+  
+    height: 60vh;
+}
+.option {
+    display: flex;
+    justify-content: start;
+}
+
+.logobox img {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+.menu-inner {
+    width: 90%;
+    margin: 0 auto;
+}
+.menu-inner img{
+    width: 100%;
+}
+
+.menu-inner .logo {
+    width: 40%;
+    margin: 0 auto;
+
+}
+.notice {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 5%;
+}
+.inspect {
+    text-align: center;
+}
+.notice h1 {
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 2.3rem;
+    display: inline;
+}
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    border-top : 2px solid #000;
+    border-bottom : 2px solid #000;
+    margin-bottom: 0px;
+    padding: 2%;
+}
+.menu-container .whisky {
+  display: flex;
+  flex-direction: column;
+}
+.menu-container {
+
+}
+.mainTime {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 40px 0;
+  background-color: #A8C0D6;
+}
+.container-head {
+
+
+}
+.container-head-left {
+    width: 100%;
+    text-align: center;
+}
+.container-head-left a {
+
+}
+.container-head-left img {
+    width: 10%;
+}
+
+.topTitle {
+    border-top: 2px solid black;
+    
+    width: 100%;
+    font-family: 'broadway';
+    font-size: 2rem;
+    text-align: center;
+    padding: 4%;
+    box-sizing: border-box;
+
+}
+.container-head-right img {
+    display: block;
+    align-items: flex-start;
+}
+.menu-container {
+
+    height:100%;
+}
+.menu-container-left {
+    width: 100%;
+    margin: auto 0;
+}
+.menu-container-left img {
+
+    width: 10%;
+
+}
+.menu-container-left h1 {
+
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+
+}
+.menu-container-left h2 {
+    font-family: sans-serif;
+    font-weight: 600;
+    display: inline;
+
+}
+.menu-container-left h3 {
+    font-size: 0.9rem;
+    margin-left: 0.4rem;
+}
+.menu-container-left p {
+    text-align: center;
+}
+.menu-container-left .add-button {
+  position: absolute;
+  right: 20%;
+  font-size: 1.2rem;
+}
+.menu-container-left .menu-contents {
+  display: flex;
+}
+.menu-container-right {
+    width: 100%;
+    text-align: center;
+    margin:  auto;
+}
+.menu-container-right h1 {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.menu-container-right i {
+    font-size: 3rem;
+}
+.main-dish {
+    font-size: 1.2rem;
+}
+.main-dish h1 {
+    font-family: 'broadway';
+}
+.event {
+    text-align: center;
+}
+.menuContainer h1 {
+    font-family: 'broadway';
+}
+.menuContainer h2 {
+    font-weight: 600;
+}
+.menuContainer h3 {
+    font-size: 0.9rem;
+}
+.menuContainer h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.price {
+    
+}
+.whisky {
+    
+}
+.whisky > .btn {
+    position: relative;
+    right: -70%;
+    
+    
+}
+.menuContainer:nth-last-child(1) .menu-container {
+    border-bottom: none;
+}
+strong {
+    font-weight: 700;
+    margin-right: 10px;
+}
+.checkOrder {
+    display: flex;
+    justify-content: center;
+}
+.checkOrder .btn {
+    width: fit-content;
+    padding: 10px;
+    
+}
