@@ -71,6 +71,7 @@
                     <p> 네이버 or 네이버 지도에 '합정 술집' 검색 후 직원에게 보여주세요!<br>(하루 10팀 한정)</p>
                     <br><br><br><br> -->
                     <h1>*메뉴 추가 페이지</h1><br><br>
+                    <p>메인 카테고리
                     <select id="category" onchange="cateChange()">
                       <!-- <option value="food">food</option>
                       <option value="glass">glass</option>
@@ -79,9 +80,10 @@
                       <option value="red">red</option> -->
                       
                   </select>
+                </p>
                   <br>
                     <p> 서브 카테고리 <select id="subCate"></select></p>
-                    <p>이미지 <br> <input type="file" id="img"></p>
+                    
                     <br>
                     <p> 메뉴 타이틀<input type="text" value="" id="title" placeholder="메뉴 이름 "></p>
                     <br>
@@ -89,12 +91,12 @@
                     <br>
                     <p> 메뉴 설명  <input type="text" id="desc" value=""><br></p>
                     <br>
-                    
+                    <p><input type="file" id="img"></p>
                     <br>
-                    <p> id 이름 <input type="text" id="id" placeholder="메뉴 id"></p>
+                    <p> id 이름(영어로) <input type="text" id="id" placeholder="메뉴 id"></p>
                 
-                    <input type="text" id="manager" placeholder="담당자">
-                                         
+                    <!-- <input type="text" id="manager" placeholder="담당자"> -->
+                                         <br>
                     <input type="button" value="보내기" onclick="menuAdd()">
                     
                         </div>

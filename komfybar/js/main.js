@@ -8,60 +8,40 @@ var requestOptions = {
 var res
 var mCategory = 'food'
 
-  fetch("https://www.komfy.kr/getMenus", requestOptions)
+  fetch("/getMenus", requestOptions)
     .then(response => response.text())
     .then(result => {
       res = JSON.parse(result)
-      res.forEach(cate=>{
+      let subTitle = ''
+      res.forEach(item=>{
         var html=''
-        Object.keys(cate).forEach(key=>{
-          if(cate[key]!=undefined){
-            cate[key].forEach(subCate => { 
-              html+=`<h1>${subCate.title}</h1>`
-              if(subCate.title =='beer'){
-                console.log(subCate.data);
-              }
-             if(key=="red" || key== "white" || key=="sparkling" || key=="port"){
-                subCate.data.forEach(item=>{
-                html+=`
-                <h2>${item.title}  | ${item.desc} | ${item.price}</h2>
-                <div class="btn" onclick="${item.onClick}">+Add</div><br>
-                  `
-                })
-              }else{
-                subCate.data.forEach(item=>{
-                  html+=`
-                    <div class="menu-contents">
-                    <div class="foods">
-                      <div class="image">
-                        <img src="${item.img}" alt="">
-                      </div>
-                      <div class="text">
-                        <h2>${item.title} | ${item.price} </h2>
-                        <h3> ${item.desc}</h3>
-                        <div class="btn" onclick="${item.onClick}">+Add</div>
-                      </div>
+        if(subTitle!=item.subTitle){
+          subTitle = item.subTitle
+          html+=`<h1>${item.subTitle}</h1>`
+        }
+        html+=`
+                <div class="menu-contents">
+                  <div class="foods">
+                    <div class="image">
+                      <img src="${item.img}" alt="">
                     </div>
-                  </div> 
-                `
-               
-
-              })
-              }
-            
-            })
-          }
-          $('#'+key).append(html);
-        })
+                    <div class="text">
+                      <h2>${item.title} | ${item.price} </h2>
+                      <h3> ${item.desc}</h3>
+                      <div class="btn" onclick="${item.onClick}">+Add</div>
+                    </div>
+                  </div>
+                </div> 
+              `
+        $('#'+item.cateTitle).append(html);
       })
-    })
-    .catch(error => console.log('error', error));
+    }).catch(error => console.log('error', error));
 
 var menuArr = [];
 var isOrder = false;
 var tableName = location.search.split('table=')[1]
 if(tableName == undefined){
-  location.href='https://www.komfy.kr/reqr.html' // qr로 재 유도하는 페이지
+  location.href='https://localhost/reqr.html' // qr로 재 유도하는 페이지
 }
 
 $(document).ready(function(){
@@ -117,11 +97,11 @@ function order(){
     redirect: 'follow'
   };
 
-  fetch("https://www.komfy.kr/order", requestOptions)
+  fetch("https://localhost/order", requestOptions)
     .then(response => response.text())
     .then(result => {
       console.log(result)
-      location.href="https://www.komfy.kr/afterorder.html" // 주문 후 손님이 보는 페이지
+      location.href="https://localhost/afterorder.html" // 주문 후 손님이 보는 페이지
     })
     .catch(error => console.log('error', error));
   }

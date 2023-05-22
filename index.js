@@ -3,26 +3,10 @@
 //접속 방법
 const fs = require('fs');
 const cors = require('cors');
-var bodyParser = require('body-parser');
-var orderHolding = [];
+
+const bodyParser = require('body-parser');
+const orderHolding = [];
 const multer = require('multer');
-const upload = multer({
-    // 파일 저장 위치 (disk , memory 선택)
-    storage: multer.diskStorage({
-      destination: function (req, file, done) {
-        done(null, './komfybar/images');
-      },
-      filename: function (req, file, done) {
-          
-          done(null, path.basename(file.originalname));
-        }
-      }),
-      // 파일 허용 사이즈 (5 MB)
-      limits: { fileSize: 30 * 1024 * 1024 }
-  });
-  
-
-
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 80;
@@ -33,11 +17,33 @@ const nodemailer = require('nodemailer');
 
 var http = require('http');
 var https = require('https');
-http.createServer(app).listen(80);
+const DBManager = require('./dbManager/dbConnector');
+const upload = multer({
+  // 파일 저장 위치 (disk , memory 선택)
+  storage: multer.diskStorage({
+    destination: function (req, file, done) {
+      done(null, './komfybar/images');
+    },
+    filename: function (req, file, done) {
+        
+        done(null, path.basename(file.originalname));
+      }
+    }),
+    // 파일 허용 사이즈 (5 MB)
+    limits: { fileSize: 30 * 1024 * 1024 }
+});
+
+http.createServer(app
+  // function(req, res){
+  //   res.statusCode = 302;
+  //   res.setHeader('Location', 'https://210.114.1.95/index.html');
+  //   res.end();
+  // }
+  ).listen(80);
 
   var options = {
-        // pfx: fs.readFileSync('./secret/Convert/CA2A.pfx'),
-        // passphrase: 'p7opx54b'
+      // pfx: fs.readFileSync('./secret/Convert/CA2A.pfx'),
+      // passphrase: 'p7opx54b'
 
       ca: fs.readFileSync('./secret/CA2A.crt.pem'),
       key: fs.readFileSync('./secret/CA2A.key.pem'),
@@ -46,18 +52,18 @@ http.createServer(app).listen(80);
 
     };
 
-  // https.createServer(options, app).listen(443, function () {
-  //   console.log('익스프레스로 HTTPS 웹 서버 실행: ' + 443);
-  // });
+  https.createServer(options, app).listen(443, function () {
+    console.log('익스프레스로 HTTPS 웹 서버 실행: ' + 443);
+  });
 
 
 
-// app.get('/', (req, res) => {
-//     // res.json({
-//     //     success: true,
-//     // });
-//     res.redirect('https://www.komfy.kr/index.html')
-// });
+app.get('/', (req, res) => {
+    // res.json({
+    //     success: true,
+    // });
+    res.redirect('https://210.114.1.95/index.html')
+});
 
 
 
@@ -216,8 +222,33 @@ app.delete('/deleteMenu/:menuId/:cate', (req,res)=>{
 })
 
 app.get('/getMenus',(req,res)=>{
+  let dbmanager = new DBManager();
+  dbmanager.selectQuery(`select menu.manager, menu.onClick, menu.img, menu.desc, menu.price, menu.title, menu.name, menu.id, 
+  cate.cateTitle, sc.subTitle, sc.idx from menu join subCate sc on sc.idx = menu.subIdx join cate on sc.cateIdx = cate.idx order by sc.idx, menu.idx asc;
+  `, res)
+})
+
+app.put('/changeMenu',(req,res)=>{
+  let body = req.body;
   var menuFile = fs.readFileSync('./komfybar/menu.json')
   var menus = JSON.parse(menuFile.toString())
+  var data, cate;
+  menus.forEach(menuCate=>{
+    if(menuCate[body.cate]){
+      cate = menuCate[body.cate]
+      data = cate[body.subcate].data
+      return;
+    }
+  })
+  var sortMenu = [];
+  body.menusId.forEach(id=>{
+    data.forEach(dt=>{
+      if(dt.id == id)
+      sortMenu.push(dt);
+    })
+  })
+  cate[body.subcate].data = sortMenu;
+  fs.writeFileSync('./komfybar/menu.json', JSON.stringify(menus))
   res.send(menus)
 })
 

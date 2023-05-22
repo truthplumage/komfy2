@@ -10,9 +10,10 @@ ul.tabs li{
 	color: white;
 	padding: 10px 15px;
 	cursor: pointer;
-    border: 2px solid black;
-    font-weight: 700;
-    margin-bottom:2px ;
+	
+  border: 2px solid black;
+  font-weight: 700;
+  margin-bottom:2px ;
 }
 
 ul.tabs li.current{

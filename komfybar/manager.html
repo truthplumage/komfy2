@@ -8,10 +8,11 @@
   <link rel="stylesheet" href="./css/main.css" />
   <link rel="stylesheet" href="./css/menu.css" />
   <link rel="stylesheet" href="./css/tab.css" />
+  
   <link rel="stylesheet" href="./css/orderbar.css" />
-
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-  <script src="/js/manager.js"></script>
+  <script defer src="/js/manager.js"></script>
 </head>
 <body>
   <ul class="tabs">
@@ -19,12 +20,14 @@
     <li class="tab-link" data-tab="tab-3" onclick="menuShow('glass')">GLASS</li>
     <li class="tab-link" data-tab="tab-4" onclick="menuShow('cocktail')">Cocktails</li>
     <li class="tab-link" data-tab="tab-5" onclick="menuShow('whiskyBottle')">Whisky Bottles</li>
-    <li class="tab-link" data-tab="tab-6" onclick="menuShow('red')">Wine Bottles</li>
+    <li class="tab-link" data-tab="tab-6" onclick="menuShow('red')">Red Bottles</li>
     <li class="tab-link" data-tab="tab-7" onclick="menuShow('white')">white Bottles</li>
     <li class="tab-link" data-tab="tab-7" onclick="menuShow('sparkling')">sparkling Bottles</li>
-    <li class="tab-link" data-tab="tab-7" onclick="menuShow('port')">port Bottles</li>
+    <li class="tab-link" data-tab="tab-7" onclick="menuShow('DessertWine')">Dessert Bottles</li>
   </ul>
-  <div class="btn" onclick="location.href='/manager_add.html'">+add</div>
+  <div class="btn" onclick="location.href='/manager_add.html'">+Add</div>
+  
+  
   <div id="menus">
 
   </div>

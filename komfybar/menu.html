@@ -36,41 +36,46 @@
   <link rel="stylesheet" href="./css/menu.css" />
   <link rel="stylesheet" href="./css/tab.css" />
   <link rel="stylesheet" href="./css/orderbar.css" />
+  <link rel="stylesheet" href="./css/common.css" />
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <script src="https://kit.fontawesome.com/3a98133f4f.js" crossorigin="anonymous"></script>
   <script defer src="./js/main.js"></script>
 </head>
 
 <body>
-  <header>
+  <!-- <header>
     <div class="inner">
-
-      <div class="menu">
-        <a href="./index.html" class="logo">
-          <img src="./images/komfylogo.png" alt="komfy">
-        </a>
-
-        <!-- <div class="main-menu">
-
-          <li><a class="secondary-menu" href="./index.html"><span> HOME</span
-            </div>  ></a></li>
-          <li><a class="secondary-menu" href="./menu.html"><span>MENU</span></a></li>
-          <li><a class="secondary-menu" href="./contact.html"><span>HOURS+CONTACT</span></a></li>
-          <li><a class="secondary-menu" href="https://open.spotify.com/playlist/4ogKvEpxpA0aR4ImeIhHKu"><span>RADIO</span></a></li>
-        </div> -->
-
+      <div class="mainLogo">
+        
+      <div class="navbar">
+        <ul class="navbar-menu">
+          <a href="./index.html">
+            <li class="navbar-menu-items">@HOME</li>
+          </a>
+          <a href="./contact.html">
+            <li class="navbar-menu-items"> ABOUT </li>
+          </a>
+          <a href="./menuForWeb.html">
+            <li class="navbar-menu-items">MENU</li>
+          </a>
+          <li class="navbar-menu-items">RADIO</li>
+          <li class="navbar-menu-items">SHOP</li>
+        </ul>
       </div>
     </div>
-  </header>
+  </header> -->
   <div class="container">
     <!-- 탭 메뉴 상단 시작 -->
     <ul class="tabs">
       <li class="tab-link current" data-tab="tab-1">NOTICE</li>
       <li class="tab-link" data-tab="tab-2">FOODS</li>
       <li class="tab-link" data-tab="tab-3">GLASS</li>
-      <li class="tab-link" data-tab="tab-4">Cocktails</li>
-      <li class="tab-link" data-tab="tab-5">Whisky Bottles</li>
-      <li class="tab-link" data-tab="tab-6">Wine Bottles</li>
+      <li class="tab-link" data-tab="tab-4">Cocktails</li><br>
+      <li class="tab-link" data-tab="tab-5">Red wine</li>
+      <li class="tab-link" data-tab="tab-6">White wine</li>
+      <li class="tab-link" data-tab="tab-7">Sparkling wine</li><br>
+      <li class="tab-link" data-tab="tab-8">Dessert wine</li>
+      <li class="tab-link" data-tab="tab-9">Whisky Bottle</li>
     </ul>
     <!-- 탭 메뉴 상단 끝 -->
     <!-- 탭 메뉴 내용 시작 -->
@@ -105,11 +110,11 @@
           <br>
           <h1 class="event">EVENT</h1>
           <br>
-          <p>1. 영수증 포토리뷰를 작성해주세요.</p>
+          <p>* 영수증 포토리뷰를 작성해주세요.</p>
           <p>작성시 컴피 하이볼 1잔 서비스(주말,공휴일 제외)</p>
           <p>직원에게 문의하세요!(네이버 로고 클릭)</p>
           <a href="https://naver.me/FIgUYJGJ" class="inspect"><img src="./images/naver.ico" alt="naver"></a>
-          <p>2. 설문조사를 작성해주세요. <br> 추첨을 통해 와인을 드립니다.(아래 폼 이미지 클릭)</p>
+          <p>* 설문조사를 작성해주세요. <br> 추첨을 통해 와인을 드립니다.(아래 폼 이미지 클릭)</p>
 
           <a href="https://forms.gle/arx8oNFN7sfSQ5jk9" target="_blank" class="inspect">
             <img src="./images/googleform.png" alt="googleform">
@@ -122,12 +127,16 @@
 
 
           <br>
-          <p>3. 신청곡은 @komfybar로 DM 혹은 아래 음표 이미지를 클릭 해주세요!</p><br>
-          <p>*최대한 원하시는 신청곡 틀어드리도록 노력하고 있지만, 가게의 상황에 따라서 신청하신 노래가 재생되지 않을 수 있습니다.<br>
-            <br>요청이 많거나, 가게가 혼잡할 시에 재생이 늦어지거나 누락될 수 있는점 이해부탁드립니다.
-
+          <p>* 신청곡은 @komfybar로 DM 혹은 아래 음표 이미지를 클릭 해주세요!</p><br>
+          <p>*1인 1곡 원칙입니다!<br>
+            아래 양식대로 보내주셔야 신청하신 곡이 재생됩니당!
+            <br>
+            <br>
+            제목 : <br>
+            아티스트 : <br>
+            
           </p>
-          <p>(1인 1곡 신청 가능)</p>
+          
           <br>
 
           <p>*여러 손님의 신청곡이 들어오기 때문에<br>
@@ -148,149 +157,8 @@
         </div>
         <div class="menu-container">
 
-          <div class="menu-container-left" id="food">
+          <div class="menu-container-left" id="food"></div>
 
-            <!-- <h1>MAIN DISH</h1><br>
-
-            <div class="menu-contents">
-              <div class="foods">
-                <div class="image">
-                  <img src="./images/potato.jpg" alt="">
-                </div>
-
-                <div class="text">
-                  <h2>Fried Potato | 13 </h2>
-                  <h3> *으깬 알감자 튀김, 트러플 아이올리 소스, 파프리카 파우더</h3>
-                  <div class="btn" onclick="menuAdd('food1', '감자 튀김 X')">+Add</div>
-                </div>
-              </div>
-            </div> 
-
-            <div class="menu-contents">
-              <div class="foods">
-                <div class="image">
-                  <img src="./images/sundae.jpg" alt="">
-                </div>
-
-                <div class="text">
-                  <h2>Fried Sundae | 15</h2>
-                  <h3>*순대 튀김, 바질페스토</h3>
-                  <div class="btn" onclick="menuAdd('food2', '순대 튀김 X')">+Add</div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="menu-contents">
-              <div class="foods">
-                <div class="image">
-                  <img src="./images/food_romaine.jpeg" alt="">
-                </div>
-  
-                <div class="text">
-                  <h2>Romaine with herb | 16</h2>
-                  <h3>*미니코스, 피스타치오 허브소스, 레몬제스트, 처빌</h3>
-                  <div class="btn" onclick="menuAdd('food4', '로메인샐러드 X')">+Add</div>
-                </div>
-              </div>
-            </div>
-
-          <div class="menu-contents">
-            <div class="foods">
-              <div class="image">
-                <img src="./images/tomato.jpeg" alt="">
-              </div>
-
-              <div class="text">
-                <h2>Burrata Tomato | 18</h2>
-                <h3>*부라타치즈, 피클 토마토, 크루통, 바질, 토마토워터 젤리</h3>
-                <div class="btn" onclick="menuAdd('food9', '부라타 치즈 토마토 X')">+Add</div>
-              </div>
-            </div>
-          </div>
-
-   
-         <div class="menu-contents">
-            <div class="foods">
-              <div class="image">
-                <img src="./images/cheeseplate.jpeg" alt="">
-              </div>
-
-
-              <div class="text">
-                <h2>Cheese plates | 20</h2>
-                <h3>*그뤼에르 치즈, 하몽, 모르타델라 햄</h3>
-                <div class="btn" onclick="menuAdd('food6', '치즈 플레이트 X')">+Add</div><br>
-              </div>
-            </div>
-
-          
-          </div>
-          <div class="menu-contents">
-            <div class="foods">
-              <div class="image">
-                <img src="./images/pasta1.jpeg" alt="">
-              </div>
-
-              <div class="text">
-                <h2>Shrimp bisque pasta | 22</h2>
-                <h3>*새우 비스큐 소스, 링귀네, 체리 토마토,파슬리, 새우, 빵가루</h3>
-                <div class="btn" onclick="menuAdd('food5', '새우 비스큐 파스타 X')">+Add</div>
-              </div>
-            </div>
-
-          </div>
-
-          <br>
-
-          <h1>DESSERT</h1><br>
-    
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/cake.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>Basque Cheese Cake | 10</h2>
-                    <h3>*직접 베이킹한 바스크 치즈케잌</h3>
-                    <div class="btn" onclick="menuAdd('food8', '바스크 치즈 케잌 X')">+Add</div>
-                  </div>
-                </div>
-    
-              </div>
-
-          <br> -->
-        </div>
-
-        <!-- <h1>REQUEST</h1><br>
-        <div class="menu-contents" id="request">
-          <div class="foods">
-            <div class="image">
-              <img src="./images/napkin.png" alt="">
-            </div>
-
-            <div class="text">
-              <h2>Napkin</h2>
-              <h3>*냅킨 요청</h3>
-              <div class="btn" onclick="menuAdd('request1', 'napkin X')">+Add</div>
-            </div>
-          </div>
-        </div> 
-        
-        <div class="menu-contents">
-          <div class="foods">
-            <div class="image">
-              <img src="./images/water.jpeg" alt="">
-            </div>
-
-            <div class="text">
-              <h2>Water </h2>
-              <h3>*물 요청</h3>
-              <div class="btn" onclick="menuAdd('request2', 'Water X')">+Add</div>
-            </div>
-          </div>
-        </div>  -->
 
         <div class="topTitle">
           <h2>파스타류 라스트오더 : 10pm </h2>
@@ -310,643 +178,7 @@
       <div class="menu-container">
 
         <div class="menu-container-left" id="glass">
-          <!-- <h1>GLASS WINE</h1>
-          <br>
-          <h4>클래식 글래스 와인</h4><br>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/redglass.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>Red Wine glass | 13</h2>
-                    <h3>*날마다 선별되는 와인</h3>
-                    <div class="btn" onclick="menuAdd('glass1', '후안길 옐로 글라스 X')">+Add</div><br>
-                  </div>
-                </div>
-    
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whiteglass.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>White Wine glass | 13</h2>
-                    <h3>*날마다 선별되는 와인</h3>
-                    <div class="btn" onclick="menuAdd('glass2', '러시안잭 글라스 X')">+Add</div><br>
-                  </div>
-                </div>
-    
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/redglass.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>콥케 토니 (RED) Alc.19.5% | 13</h2>
-                    <h3>*레드 포트와인, 미디엄 바디, 달고 바디감 있는 디저트 와인</h3>
-                    <div class="btn" onclick="menuAdd('glass3', '포트 레드 glass X')">+Add</div><br>
-                  </div>
-                </div>
-    
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whiteglass.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-
-                    <h2>콥케 화이트 (WHITE) Alc.19.5% | 13</h2>
-                    <h3>*화이트 포트와인, 미디엄 바디, 조금 더 라이트한 바디감의 차게 마시는 포트와인</h3>
-                    <div class="btn" onclick="menuAdd('glass4', '포트 화이트 glass X')">+Add</div><br>
-                  </div>
-                </div>
-    
-              </div>
-              <h4>내추럴 글래스 와인</h4><br>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/redglass.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>아지뭇 니그레 (RED) | 16</h2>
-                    <h3>*모나스트렐, 체리, 스트로베리, 블랙베리, 미네랄</h3>
-                    <div class="btn" onclick="menuAdd('glass5', '아지뭇 레드 glass X')">+Add</div><br>
-                  </div>
-                </div>
-    
-
-                
-              </div>
-
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whiteglass.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>아지뭇 블랑 (WHITE) | 16</h2>
-                    <h3>*마카보, 미네랄, 퓨어, 시트러스, 마른 허브</h3>
-                    <div class="btn" onclick="menuAdd('glass6', '아지뭇 화이트 glass X')">+Add</div><br>
-                  </div>
-                </div>
-    
-              </div>
-              
-
-
-
-              <h1>BEER & SHOT</h1><br>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/beer4.jpeg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>Cerdos Voladores | 12</h2>
-                  <h3>*홉의 향이 돋보이는 페일에일. 아로마와 바디감이 증진된 맛. Alc.6.0%</h3>
-                    <div class="btn" onclick="menuAdd('beer4', '세르도스 X')">+Add</div><br>
-                  </div>
-                </div>
-    
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/beer5.jpeg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>La bella lola | 13</h2>
-                    <h3>*지중해 페일 에일. 청명한 맛이 돋보이는 밀맥주 Alc.4.0%</h3>
-                    <div class="btn" onclick="menuAdd('beer5', '라벨라로라 X')">+Add</div><br>
-                  </div>
-                </div>
-    
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/beer6.jpeg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>Santa Rita | 12</h2>
-                    <h3>*스페인식 청명한 라거 Alc.4.4%</h3>
-                    <div class="btn" onclick="menuAdd('beer6', '산타리타 X')">+Add</div><br>
-                  </div>
-                </div>
-    
-              </div>
-
-
-
-
-
-
-
-
-
-
-            <div class="menu-container-left">
-              <div class="whisky">
-                <h1>American Whisky</h1><br>
-
-
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky1.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>제임슨 | 9 </h2>
-                      <div class="btn" onclick="menuAdd('whisky1', '제임슨 glass X'); $('.whisky1').show()">+Add</div>
-                      <div class="option whisky1" id="whisky1">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-      
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky2.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>페이머스 그라우스 | 11 </h2>
-                      <div class="btn" onclick="menuAdd('whisky2', '페이머스 그라우스 glass X'); $('.whisky2').show()">+Add</div>
-                      <div class="option whisky2" id="option">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky3.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>듀어스 | 12 </h2>
-                      <div class="btn" onclick="menuAdd('whisky3', '듀어스 glass X'); $('.whisky3').show()">+Add</div>
-                      <div class="option whisky3" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky5.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>와일드 터키 | 12 </h2>
-                      <div class="btn" onclick="menuAdd('whisky5', '와일드 터키 glass X'); $('.whisky5').show()">+Add</div>
-                      <div class="option whisky5" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky6.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>잭다니엘 | 13 </h2>
-                      <div class="btn" onclick="menuAdd('whisky6', '잭다니엘 glass X'); $('.whisky6').show()">+Add</div>
-                      <div class="option whisky6" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <h1>Single Malt Whisky</h1>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky7.jpg" alt="">
-                    </div>
-      
-                    
-                    <div class="text">
-                      <h2>탈리스커 10y | 13 </h2>
-                      <div class="btn" onclick="menuAdd('whisky7', '탈리스커10 glass X'); $('.whisky7').show()">+Add</div>
-                      <div class="option whisky7" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky8.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>맥켈란 더블캐스크 | 20 </h2>
-                      <div class="btn" onclick="menuAdd('whisky8', '맥켈란12 glass X'); $('.whisky8').show()">+Add</div>
-                      <div class="option whisky8" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky9.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>싱글톤 12y | 15 </h2>
-                      <div class="btn" onclick="menuAdd('whisky9', '싱글톤12 glass X'); $('.whisky9').show()">+Add</div>
-                      <div class="option whisky9" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky10.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>싱글톤 15y | 19 </h2>
-                      <div class="btn" onclick="menuAdd('whisky10', '싱글톤15 glass X'); $('.whisky10').show()">+Add</div>
-                      <div class="option whisky10" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky11.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>보모어 12y | 15 </h2>
-                      <div class="btn" onclick="menuAdd('whisky11', '보모어12 glass X'); $('.whisky11').show()">+Add</div>
-                      <div class="option whisky11" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky12.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      
-                <h2>글렌리벳 12y | 15 </h2>
-                <div class="btn" onclick="menuAdd('whisky12', '글렌리벳12 glass X'); $('.whisky12').show()">+Add</div>
-                <div class="option whisky12" id="whiskyoption">
-                  <strong>잔 선택 </strong>
-                  <div class="whiskyOptionBtn">
-                    <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                    <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                  </div>
-                </div>
-
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky13.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>글렌피딕 12y | 15 </h2>
-                      <div class="btn" onclick="menuAdd('whisky13', '글렌피딕12 glass X'); $('.whisky13').show()">+Add</div>
-                      <div class="option whisky13" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky14.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>글렌피딕 15y | 19 </h2>
-                      <div class="btn" onclick="menuAdd('whisky14', '글렌피딕15 glass X'); $('.whisky14').show()">+Add</div>
-                      <div class="option whisky14" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky15.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>라프로익 10y | 16 </h2>
-                      <div class="btn" onclick="menuAdd('whisky15', '라프로익10 glass X'); $('.whisky15').show()">+Add</div>
-                      <div class="option whisky15" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky16.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>아란 10y | 16 </h2>
-                      <div class="btn" onclick="menuAdd('whisky16', '아란10 glass X'); $('.whisky16').show()">+Add</div>
-                      <div class="option whisky16" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky17.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>아드벡 10y | 16 </h2>
-                      <div class="btn" onclick="menuAdd('whisky17', '아드벡10 glass X'); $('.whisky17').show()">+Add</div>
-                      <div class="option whisky17" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky18.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>글렌모란지 10y | 15 </h2>
-                      <div class="btn" onclick="menuAdd('whisky18', '글렌모란지10 glass X'); $('.whisky18').show()">+Add</div>
-                      <div class="option whisky18" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                    </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky19.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>글렌모란지 라산타 | 17 </h2>
-                <div class="btn" onclick="menuAdd('whisky19', '글렌모란지 라산타 glass X'); $('.whisky19').show()">+Add</div>
-                <div class="option whisky19" id="whiskyoption">
-                  <strong>잔 선택 </strong>
-                  <div class="whiskyOptionBtn">
-                    <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                    <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                  </div>
-                </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky20.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>글렌모란지 퀸타루반 | 19 </h2>
-                <div class="btn" onclick="menuAdd('whisky20', '글렌모란지 퀸타루반 glass X'); $('.whisky20').show()">+Add</div>
-                <div class="option whisky20" id="whiskyoption">
-                  <strong>잔 선택 </strong>
-                  <div class="whiskyOptionBtn">
-                    <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                    <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                  </div>
-                </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky21.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>발베니 12y | 20 </h2>
-                      <div class="btn" onclick="menuAdd('whisky21', '발베니12 glass X'); $('.whisky21').show()">+Add</div>
-                      <div class="option whisky21" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/whisky22.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <h2>발베니 14y | 22 </h2>
-                      <div class="btn" onclick="menuAdd('whisky22', '발베니14 glass X'); $('.whisky22').show()">+Add</div>
-                      <div class="option whisky22" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>      
-                </div>
-
-                <h1>Cognac</h1><br>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/cognac1.jpg" alt="">
-                    </div>
-                    
-                    <div class="text">
-                      <h2>레미마틴 VSOP | 15 </h2>
-                      <div class="btn" onclick="menuAdd('cognac1', '레미마틴 glass X'); $('.cognac1').show()">+Add</div>
-                      <div class=" option cognac1" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-                <div class="menu-contents">
-                  <div class="foods">
-                    <div class="image">
-                      <img src="./images/cognac2.jpg" alt="">
-                    </div>
-      
-                    <div class="text">
-                      <H2>헤네시 VSOP | 18 </H2>
-                      <div class="btn" onclick="menuAdd('cognac2', '헤네시 glass X'); $('.cognac2').show()">+Add</div>
-                      <div class=" option cognac2" id="whiskyoption">
-                        <strong>잔 선택 </strong>
-                        <div class="whiskyOptionBtn">
-                          <div class="btn" onclick="menuAdd('whiskyOption1', 'straight X'); optionPopUpHide()">straight</div>
-                          <div class="btn" onclick="menuAdd('whiskyOption2', 'with ice X'); optionPopUpHide()">with ice</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-
-
-  
-
-
-                <br>
-                
-
-
-
-
-              </div> -->
+         
             </div>
 
 
@@ -971,148 +203,7 @@
       <div class="menu-container">
 
         <div class="menu-container-left" id="cocktail">
-          <!-- <div class="menu-contents">
-            <div class="foods">
-              <div class="image">
-                <img src="./images/cocktail1.jpg" alt="">
-              </div>
-
-              <div class="text">
-                <h2>컴피 하이볼 | 13</h2>
-          <h3>*시나몬이 들어간 달달한 버번 위스키 하이볼 ★★☆☆☆</h3>
-          <div class="btn" onclick="menuAdd('cocktail1', '컴피 하이볼 X')">+Add</div><br>
-              </div>
-            </div>
-
-          </div>
-          <div class="menu-contents">
-            <div class="foods">
-              <div class="image">
-                <img src="./images/cocktail2.jpg" alt="">
-              </div>
-              
-              <div class="text">
-                <h2>싱글몰트 하이볼 | 16</h2>
-          <h3>*싱글몰트 위스키를 도전해보고 싶지만 너무 독할것 같은 사람들을 위한 스모키한 하이볼 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('cocktail2', '싱글몰트 하이볼 X')">+Add</div><br>
-              </div>
-            </div>
-
-          </div>
-          <div class="menu-contents">
-            <div class="foods">
-              <div class="image">
-                <img src="./images/cocktail_3_non.JPG" alt="">
-              </div>
-
-              <div class="text">
-                <h2>진저 애플 *알콜프리 | 13</h2>
-                <h3>*알콜 프리에 취하는 진저 애플 ☆☆☆☆☆</h3>
-                <div class="btn" onclick="menuAdd('cocktail3', '진저 애플 X')">+Add</div><br>
-              </div>
-            </div>
-
-          </div>
-          <div class="menu-contents">
-            <div class="foods">
-              <div class="image">
-                <img src="./images/cocktail4.jpg" alt="">
-              </div>
-
-              <div class="text">
-                <h2>진토닉 | 12</h2>
-          <h3>*모두가 아는 진토닉 ★★☆☆☆</h3>
-          <div class="btn" onclick="menuAdd('cocktail4', '진토닉 X')">+Add</div><br>
-              </div>
-            </div>
-
-          </div>
-          <div class="menu-contents">
-            <div class="foods">
-              <div class="image">
-                <img src="./images/cocktail_1_ginfizz.jpg" alt="">
-              </div>
-
-              <div class="text">
-                <h2>화이트 카카오 피즈 | 15</h2>
-          <h3>*달달한 초코향과 맛이 나면서 새콤 달콤한 칵테일 ★☆☆☆☆</h3>
-          <div class="btn" onclick="menuAdd('cocktail5', '카카오 피즈 X')">+Add</div><br>
-              </div>
-            </div>
-
-          </div>
-          <div class="menu-contents">
-            <div class="foods">
-              <div class="image">
-                <img src="./images/cocktail7.jpeg" alt="">
-              </div>
-
-              <div class="text">
-                <h2>리치 마티니 | 15</h2>
-          <h3>*리치 향이 가득 향긋한 시그니쳐 마티니 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('cocktail7', '리치 마티니 X')">+Add</div><br>
-              </div>
-            </div>
-
-          </div>
           
-
-          <div class="menu-contents">
-            <div class="foods">
-              <div class="image">
-                <img src="./images/cocktail8.jpg" alt="">
-              </div>
-
-              <div class="text">
-                <h2>뉴욕 | 16</h2>
-          <h3>*뉴욕이 떠오르는 식전주로 유명한 새콤달콤 위스키 베이스의 칵테일 ★★★★☆</h3>
-          <div class="btn" onclick="menuAdd('cocktail8', '뉴욕 X')">+Add</div><br>
-              </div>
-            </div>
-
-          </div>
-          <div class="menu-contents">
-            <div class="foods">
-              <div class="image">
-                <img src="./images/cocktail_2_amaretto sour.jpg" alt="">
-              </div>
-
-              <div class="text">
-                <h2>아마레또 사우어 | 16</h2>
-          <h3>*크리미한 아몬드 리큐르의 달콤하고 사워한 맛이 입으로 들어오는 칵테일 ★★☆☆☆</h3>
-          <div class="btn" onclick="menuAdd('cocktail9', '아마레또 사우어 X')">+Add</div><br>
-              </div>
-            </div>
-
-          </div>
-          <div class="menu-contents">
-            <div class="foods">
-              <div class="image">
-                <img src="./images/cocktail10.jpg" alt="">
-              </div>
-
-              <div class="text">
-                <h2>올드패션드 | 18</h2>
-          <h3>*오렌지향 가득한 올드패션드 ★★★★★</h3>
-          <div class="btn" onclick="menuAdd('cocktail10', '올드 패션드 X')">+Add</div><br>
-              </div>
-            </div>
-
-          </div>
-          <div class="menu-contents">
-            <div class="foods">
-              <div class="image">
-                <img src="./images/cocktail11.jpg" alt="">
-              </div>
-
-              <div class="text">
-                <h2>갓파더 | 18</h2>
-                <h3>*버번위스키가 베이스로 된 스모키한 칵테일 ★★★★☆</h3>
-                <div class="btn" onclick="menuAdd('cocktail11', '갓파더 X')">+Add</div><br>
-              </div>
-            </div>
-
-          </div> -->
         </div>
         <div class="topTitle">
 
@@ -1120,7 +211,78 @@
       </div>
     </div>
   </div>
+  
   <div id="tab-5" class="tab-content">
+    <div class="menuContainer">
+      <div class="container-head">
+
+        <div class="topTitle">
+          RED WINE
+        </div>
+      </div>
+        <div class="menu-container">
+
+            <div class="menu-container-left" id="red"></div>
+            <!-- <div class="menu-container-left" id="white"></div>
+            <div class="menu-container-left" id="sparkling"></div>
+            <div class="menu-container-left" id="port"></div> -->
+          </div>  
+        </div>
+      <div class="topTitle">
+
+      </div>
+
+    </div>
+  </div>
+  <div id="tab-6" class="tab-content">
+    <div class="menuContainer">
+      <div class="container-head">
+
+        <div class="topTitle">
+          WHITE WINE
+        </div>
+      </div>
+      <div class="menu-container">
+
+        <div class="menu-container-left" id="white"></div>
+            
+            
+          </div>  
+        </div>
+  </div>
+  <div id="tab-7" class="tab-content">
+    <div class="menuContainer">
+      <div class="container-head">
+
+        <div class="topTitle">
+          SPARKLING WINE
+        </div>
+      </div>
+      <div class="menu-container">
+
+        <div class="menu-container-left" id="sparkling"></div>
+            
+            
+          </div>  
+        </div>
+  </div>
+  <div id="tab-8" class="tab-content">
+    <div class="menuContainer">
+      <div class="container-head">
+
+        <div class="topTitle">
+          DESSERT WINE
+        </div>
+      </div>
+      <div class="menu-container">
+
+        <div class="menu-container-left" id="DessertWine"></div>
+            
+            
+          </div>  
+        </div>
+  </div>
+  <div id="tab-9" class="tab-content">
     <div class="menuContainer">
       <div class="container-head">
 
@@ -1129,569 +291,13 @@
         </div>
       </div>
       <div class="menu-container">
-        <div class="menu-container-left" id="whiskyBottle">
-          <!-- <div class="whisky">
-            <h1>American Whisky</h1><br>
-
-            <h2 class="price">가격 : 1/3 bottle | 1 bottle<br>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky1.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>제임슨 40 | 110</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle1', '제임슨 X'); $('.whisky1').show()">+Add</div>
-                    <div class="option whisky1" id="whisky1">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                  </div>
-                </div>
-    
-              </div>
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky2.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>페이머스 그라우스 50 | 120</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle2', '페이머스 그라우스 X'); $('.whisky2').show()">+Add</div>
-                    <div class="option whisky2" id="option">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky3.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>듀어스 60 | 150</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle3', '듀어스 X'); $('.whisky3').show()">+Add</div>
-                    <div class="option whisky3" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-       
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky5.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>와일드 터키 60 | 150</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle5', '와일드 터키 X'); $('.whisky5').show()">+Add</div>
-                    <div class="option whisky5" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky6.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>잭다니엘 70 | 180</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle6', '잭다니엘 X'); $('.whisky6').show()">+Add</div>
-                    <div class="option whisky6" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-
-              <h1>Single Malt Whisky</h1><br>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky7.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>탈리스커 10y 70 | 180</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle7', '탈리스커10 X'); $('.whisky7').show()">+Add</div>
-                    <div class="option whisky7" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky8.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>맥켈란 더블캐스크 130 | 260</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle8', '맥켈란12 X'); $('.whisky8').show()">+Add</div>
-                    <div class="option whisky8" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky9.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>싱글톤 12y 80 | 210</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle9', '싱글톤12 X'); $('.whisky9').show()">+Add</div>
-                    <div class="option whisky9" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky10.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>싱글톤 15y 90 | 260</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle10', '싱글톤15 X'); $('.whisky10').show()">+Add</div>
-                    <div class="option whisky10" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky11.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>보모어 12y 80 | 210</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle11', '보모어12 X'); $('.whisky11').show()">+Add</div>
-                    <div class="option whisky11" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>      
-                  </div>
-                </div>      
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky12.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>글렌리벳 12y 90 | 210</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle12', '글렌리벳12 X'); $('.whisky12').show()">+Add</div>
-                    <div class="option whisky12" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-      
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky13.jpg" alt="">
-                  </div>
-                  <div class="text">
-                  <h2>글렌피딕 12y 80 | 210</h2>
-                  <div class="btn" onclick="menuAdd('whiskyBottle13', '글렌피딕12 X'); $('.whisky13').show()">+Add</div>
-                  <div class="option whisky13" id="whiskyoption">
-                    <strong> 양 선택 </strong>
-                    <div class="whiskyOptionBtn">
-                      <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                      </div>
-                      <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                    </div>
-                  </div>
-                </div>
-                </div>      
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky14.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>글렌피딕 15y 90 | 260</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle14', '글렌피딕15 X'); $('.whisky14').show()">+Add</div>
-                    <div class="option whisky14" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky15.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>라프로익 10y 90 | 220</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle15', '라프로익10 X'); $('.whisky15').show()">+Add</div>
-                    <div class="option whisky15" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-
-         
-
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky17.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>아드벡 10y 90 | 220</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle17', '아드벡10 X'); $('.whisky17').show()">+Add</div>
-                    <div class="option whisky17" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky18.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>글렌모란지 10y 80 | 210</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle18', '글렌모란지10 X'); $('.whisky18').show()">+Add</div>
-                    <div class="option whisky18" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky19.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>글렌모란지 라산타 100 | 230</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle19', '글렌모란지 라산타 X'); $('.whisky19').show()">+Add</div>
-                    <div class="option whisky19" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky20.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>글렌모란지 퀸타루반 110 | 260</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle20', '글렌모란지 퀸타루반 X'); $('.whisky20').show()">+Add</div>
-                    <div class="option whisky20" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky21.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>발베니 12y 105 | 280</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle21', '발베니12 X'); $('.whisky21').show()">+Add</div>
-                    <div class="option whisky21" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/whisky22.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>발베니 14y 115 | 300</h2>
-                    <div class="btn" onclick="menuAdd('whiskyBottle22', '발베니14 X'); $('.whisky22').show()">+Add</div>
-                    <div class="option whisky22" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>      
-                  </div>
-                </div>      
-              </div>
-              <br>
-              <h1>Cognac</h1>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/cognac1.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <h2>레미마틴 VSOP 80 | 210</h2>
-                    <div class="btn" onclick="menuAdd('cognac1', '레미마틴 X'); $('.cognac1').show()">+Add</div>
-                    <div class=" option cognac1" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-              <div class="menu-contents">
-                <div class="foods">
-                  <div class="image">
-                    <img src="./images/cognac2.jpg" alt="">
-                  </div>
-    
-                  <div class="text">
-                    <H2>헤네시 VSOP 110 | 250</H2>
-                    <div class="btn" onclick="menuAdd('cognac2', '헤네시 X'); $('.cognac2').show()">+Add</div>
-                    <div class=" option cognac2" id="whiskyoption">
-                      <strong> 양 선택 </strong>
-                      <div class="whiskyOptionBtn">
-                        <div class="btn" onclick="menuAdd('whiskyOption3', ' 1/3 Bottle X'); optionPopUpHide()">1/3 Bottle
-                        </div>
-                        <div class="btn" onclick="menuAdd('whiskyOption4', ' 1 Bottle X'); optionPopUpHide()">1 Bottle</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>      
-              </div>
-          </div> -->
-        </div>
+        <div class="menu-container-left" id="whiskyBottle"></div>
         <div class="topTitle">
 
         </div>
 
       </div>
     </div>
-  </div>
-  <div id="tab-6" class="tab-content">
-    <div class="menuContainer">
-      <div class="container-head">
-
-        <div class="topTitle">
-          WINE
-        </div>
-      </div>
-      <div class="menu-container">
-
-        <div class="menu-container-left">
-          <div id="red"></div>
-          <!-- <h1>RED WINE</h1><br>
-          <h2>Juan Gil yellow label | Monastrell | Spain | #juicy #tannic #oak #chocolate #juicy #blackberry | 63</h2>
-          <h3>알콜 14.5% 바디감 ★★★☆☆ 당도 ★★☆☆☆ 산도 ★★☆☆☆</h3>
-          <div class="btn" onclick="menuAdd('red1', 'juangil X')">+Add</div><br>
-          <h2>TroubleMaker | Syrah, grenache | USA | #dry #tannin #oak #bold #vanilla #chocolate #plum | 70</h2>
-          <h3>알콜 14% 바디감 ★★★★☆ 당도 ★★☆☆☆ 산도 ★★☆☆☆</h3>
-          <div class="btn" onclick="menuAdd('red2', 'TroubleMaker X')">+Add</div><br>
-          <h2>Azimut Negre (Natural) | Monastrell | Spain | #cherry #strawberry #blackberry #mineral | 73</h2>
-          <h3>알콜 14.5% 바디감 ★★☆☆☆ 당도 ★★☆☆☆ 산도 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('red3', 'Azimut Negre X')">+Add</div><br>
-          <h2>Sasyr Toscana | Sangivese, syrah | Italy #dry #plum #blackberry #cherry #oak | 85</h2>
-          <h3>알콜 14% 바디감 ★★☆☆☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('red4', 'Sasyr Toscana X')">+Add</div><br>
-          <h2>El picaro | Tempranillo | Spain | #oak #vanilla #chocolate #blueberry #plum | 73</h2>
-          <h3>알콜 14% 바디감 ★★★★☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('red5', 'El picaro X')">+Add</div><br>
-          <h2>Take it to the grave | Shiraz | Auastralia | #tannic #plum #oak #chocolate #pepper | 79 </h2>
-          <h3>알콜 14.5% 바디감 ★★★★☆ 당도 ★☆☆☆☆ 산도 ★★☆☆☆</h3>
-          <div class="btn" onclick="menuAdd('red6', 'Take it to the grave Shiraz X')">+Add</div><br>
-          <h2>Paso robles Merlot 2019 | Merlot | USA | #mild #butter #smoky #dry | 81</h2>
-          <h3>알콜 14.5% 바디감 ★★★☆☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('red8', 'Paso robles Merlot X')">+Add</div><br>
-          <h2>Single parcel Insitu | Cabernat sauvignon | Chille #blackberry #dark cherry #earthy #stone | 83</h2>
-          <h3>알콜 14.5% 바디감 ★★★☆☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('red10', 'Single Parcel Insitu X')">+Add</div><br>
-          
-          <h2>Badboys de Bordeaux (Natural) | Malbec | Spain | #tannic #medium-body #bold #tannic | 89 </h2>
-          <h3>알콜 14% 바디감 ★★★★☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('red12', 'Badboys X')">+Add</div><br> -->
-<div id="white"></div>
-          <!-- <h1>White WINE</h1><br>
-          <h2>Russian Jack | sauvignon Blanc | Newzealand | #aroma #sharp #fruity #green grape | 63</h2>
-          <h3>알콜 13% 바디감 ★★☆☆☆ 당도 ★★☆☆☆ 산도 ★★★★☆</h3>
-          <div class="btn" onclick="menuAdd('white1', 'Russain jack X')">+Add</div><br>
-          <h2>Catherine Marshall | Riesling | South Africa | #fresh #fruity #lime #apple | 67</h2></a>
-          <h3>알콜 12% 바디감 ★★☆☆☆ 당도 ★★☆☆☆ 산도 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('white2', 'Catherine Marshall X')">+Add</div><br>
-          <h2>Azimut Blanc (Natural) | Macabeau | Spain | #mineral #daily #pure #earthy #citrus | 73</h2>
-          <h3>알콜 13% 바디감 ★★☆☆☆ 당도 ★★☆☆☆ 산도 ★★★★☆</h3>
-          <div class="btn" onclick="menuAdd('white5', 'Azimut Blanc X')">+Add</div><br>
-          <h2>Gessami | Sauvignon Blanc, Muscat, Gewurztraminer | Spain #whiteflower #flavor #peach #flower| 80</h2>
-          <h3>알콜 11% 바디감 ★★☆☆☆ 당도 ★★★☆☆ 산도 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('white6', 'Gessami X')">+Add</div><br>
-          <h2>Limestone Hill | Chardonnay | South Africa | #semi-dry #aroma #citrus #apple #pear | 77</h2>
-          <h3>알콜 12% 바디감 ★★☆☆☆ 당도 ★☆☆☆☆ 산도 ★★☆☆☆</h3>
-          <div class="btn" onclick="menuAdd('white7', 'Limestone Hill X')">+Add</div><br>
-          <h2>Life from stone | sauvignon Blanc| South Africa | #earthy #aroma #passionfruit #citurs #tropical | 81
-          </h2>
-          <h3>알콜 12.5% 바디감 ★★☆☆☆ 당도 ★★☆☆☆ 산도 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('white8', 'Life from stone X')">+Add</div><br> -->
-
-<div id="sparkling"></div>
-          <!-- <h1>Sparkling WINE</h1><br>
-
-          <h2>Louis Perdrier | Chardonnay | France | #semi-dry #citurs #mineral #lemon #medium bubble | 50</h2>
-          <h3>알콜 11% 바디감 ★★☆☆☆ 당도 ★★☆☆☆ 산도 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('sparkling1', 'Louis Perdrier X')">+Add</div><br>
-          <h2>Gota de Maravilla | Cava | Spain | #semi-dry #apple #fresh #citurs | 52</h2>
-          <h3>알콜 11.5% 바디감 ★★★☆☆ 당도 ★☆☆☆☆ 산도 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('sparkling2', 'Gota de Maravilla X')">+Add</div><br>
-          <h2>Sprin toso Spumante | Moscato | Italy #sweet #melon #clean #green apple | 54</h2>
-          <h3>알콜 6% 바디감 ★★★☆☆ 당도 ★★★★☆ 산도 ★★★☆☆</h3>
-          <div class="btn" onclick="menuAdd('sparkling3', 'Spumante X')">+Add</div><br> -->
-
-<div id="port"></div>
-<!-- 
-          <h1>Port WINE (SWEET)</h1><br>
-          <h2>Tawny PORTO | Portugal | #sweet #vanilla #fuity #ripe | 67</h2>
-          <h3>알콜 19.5% 바디감 ★★★★☆ 당도 ★★★★★ </h3>
-          <div class="btn" onclick="menuAdd('port1', 'Tawny Porto X')">+Add</div><br>
-          <h2>White Porto | Portugal | #more-sweet #vanilla | 69</h2>
-          <h3>알콜 19.5% 바디감 ★★☆☆☆ 당도 ★★★★★ </h3>
-          <div class="btn" onclick="menuAdd('port2', 'White porto X')">+Add</div><br> -->
-
-        </div>
-      </div>
-      <div class="topTitle">
-
-      </div>
-
-    </div>
-  </div>
-  <div id="tab-7" class="tab-content">
   </div>
   <!-- 탭 메뉴 내용 끝 -->
 

@@ -10,9 +10,10 @@ body{
 }
 
 
-header {
+
+/* header {
     display: flex;
-}
+} */
 
 a {
     color: #000;
@@ -20,7 +21,7 @@ a {
     display: block;
 
 }
-
+/* 
 header .inner {
     width: 90%;
     margin: 50px;
@@ -70,7 +71,7 @@ header .inner .menu .main-menu li a {
 header .inner .menu .main-menu li a:hover {
     text-decoration: underline;
     color: #fff;
-}
+} */
 
 main {
 
@@ -120,10 +121,13 @@ menu .imagebox img{
   display: block;
 }
 .foods .image {
+    margin-top: 3px;
   width: 40%;
 }
 .foods .image img {
+    
   width: 100%;
+  
 }
 footer .inner {
     
@@ -175,7 +179,7 @@ footer .inner {
 }
 
 @media screen and (max-width : 768px) {
-    header {
+    /* header {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -203,6 +207,6 @@ footer .inner {
     }
     .imagebox-desktop {
         display: flex;
-    }
+    } */
 
 }

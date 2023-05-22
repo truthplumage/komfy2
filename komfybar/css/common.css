@@ -6,13 +6,15 @@
 }
 a {
 	text-decoration: none;
+	color: #000;
 }
 a:visited {
 	color: #000;
-	
+	display: none;
 }
 @font-face {
     font-family: 'broadway';
+		
     src: url('./fonts/Broadway.ttf') format("truetype");
 }
 
@@ -23,13 +25,13 @@ header{
 
 }
 header .mainLogo {
-	
+	display: flex;
 }
 header .mainLogo img {
-	width: 150px;
+	width: 120px;
 }
 header .inner{
-	margin: 0 auto;	
+	
 }
 header .navbar{
 	padding: 15px;
@@ -57,15 +59,93 @@ header .navbar .navbar-menu .navbar-menu-items:hover {
 }
 
 /* main */
+.mainTitle {
+	line-height: 1.5rem;
+	font-size: 40px;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	
+	width: 80%;
+	margin: 20px auto;
+	font-weight: 700;
+}
+.main-menu {
+	width: 100%;
+	text-align: center;
+}
+.main-menu-items{
+	padding: 20px;
+	display: block;
+	align-items: center;
+	justify-content: center;
+}
+.menu-container {
+	width: 100%;
+	
+}
+
+.menu-container-items {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+.menu-container-item {
+	
+	width: 220px;
+	height: 280px;
+	margin: 3px auto;
+	
+	background-color: #000;
+}
+.menu-container-item img {
+	width: 100%;
+	height: 100%;
+}
 main {
 
 }
 main .inner{
-
+	
 }
+main .inner .image-box{
+	width: 100%;
+	height: 500px;
+	background-image: url("../images/about3.jpeg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+
 main .inner img {
 	width: 100%;
+	overflow: hidden;
 	
+}
+main .inner .text-box {
+	
+	margin-top: 10px;
+	
+	padding: 35px;
+	
+}
+main .inner .text-box img {
+	width: 100px;
+}
+main .inner .text-box h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 30px;
+}
+main .inner .text-box h2 {
+	padding: 10px;
+	font-weight: 700;
+	font-size: 18px;
+}
+main .inner .text-box p {
+	font-family: 'Montserrat', sans-serif;
+	padding: 10px;
+	line-height: 1.3rem;
 }
 .mobileBack {
 	display: none;
@@ -76,10 +156,10 @@ footer {
 
 }
 footer .inner {
-	margin: 0 auto;
+	margin: 30px auto;
 	align-items: center;
 	border-top: 2px solid black;
-	margin: 30px ;
+	
 	padding: 20px;
 	
 }
@@ -95,7 +175,7 @@ footer .inner img {
 	text-align: center;
 }
 .contactText h1 {
-    font-family: 'broadway';
+  font-family: 'broadway';
 	font-size: 45px;
 }
 .contactText img {
@@ -114,7 +194,7 @@ footer .inner img {
 
 /* 미디어 스크린 쿼리 */
 
-@media all and (min-width:768px) and (max-width:1023px) { 
+@media all and (min-width:1023px) and (max-width:1440px) { 
   main .inner {
 		width: 100%;
 	}
@@ -123,6 +203,22 @@ footer .inner img {
 	}
 	.mobileBack {
 		display: block;
+	}
+	.menu-container-item {
+	
+		width: 280px;
+		height: 320px;
+		margin: 3px auto;
+		
+		background-color: #000;
+	}
+	main .inner .image-box{
+		width: 100%;
+		height: 500px;
+		background-image: url("../images/about3.jpeg");
+		background-repeat: no-repeat;
+		background-position: center -10px;
+		background-size: cover;
 	}
 } 
 
@@ -137,6 +233,14 @@ footer .inner img {
 	.mobileBack {
 		display: block;
 	}
+	main .inner .image-box{
+		width: 100%;
+		height: 500px;
+		background-image: url("../images/about3.jpeg");
+		background-repeat: no-repeat;
+		background-position: center -5px;
+		background-size: cover;
+	}
 } 
 
 /* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
@@ -150,6 +254,14 @@ footer .inner img {
 	}
 	.mobileBack {
 		display: block;
+	}
+	main .inner .image-box{
+		width: 100%;
+		height: 500px;
+		background-image: url("../images/about3.jpeg");
+		background-repeat: no-repeat;
+		background-position: center -40px;
+		background-size: cover;
 	}
 } 
 

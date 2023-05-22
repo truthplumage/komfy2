@@ -1,10 +1,10 @@
 
 $(document).ready(function(){
 	
-	$('ul.tabs li').click(function(){
+	$('div.tabs div').click(function(){
 		var tab_id = $(this).attr('data-tab');
 
-		$('ul.tabs li').removeClass('current');
+		$('div.tabs div').removeClass('current');
 		$('.tab-content').removeClass('current');
 
 		$(this).addClass('current');
