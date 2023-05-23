@@ -42,7 +42,7 @@ var menuArr = [];
 var isOrder = false;
 var tableName = location.search.split('table=')[1]
 if(tableName == undefined){
-  location.href=`https://${url}/reqr.html` // qr로 재 유도하는 페이지
+  location.href=`/reqr.html` // qr로 재 유도하는 페이지
 }
 
 $(document).ready(function(){
@@ -98,11 +98,11 @@ function order(){
     redirect: 'follow'
   };
 
-  fetch(`https://${url}//order`, requestOptions)
+  fetch(`/order`, requestOptions)
     .then(response => response.text())
     .then(result => {
       console.log(result)
-      location.href=`https://${url}/afterorder.html` // 주문 후 손님이 보는 페이지
+      location.href=`/afterorder.html` // 주문 후 손님이 보는 페이지
     })
     .catch(error => console.log('error', error));
   }

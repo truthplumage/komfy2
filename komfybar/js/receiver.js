@@ -137,22 +137,13 @@ var requestOptions = {
   redirect: 'follow'
 };
 var res
-fetch("https://www.komfy.kr/getMenus", requestOptions)
+fetch("/getMenus", requestOptions)
     .then(response => response.text())
     .then(result => {
       res = JSON.parse(result)
-      res.forEach(cate=>{
-        Object.keys(cate).forEach(key=>{
-          if(cate[key]!=undefined){
-            cate[key].forEach(subCate => { 
-              subCate.data.forEach((data)=>{
-                let menuName = {}
-                menuName[data.id] = data.name;
-                allMenus.push(menuName)
-              })
-            })
-          }
-        })
+      console.log(res);
+      res.forEach(menu=>{
+        allMenus.push(menu)
       })
       initOrder()
     })
@@ -173,11 +164,11 @@ function orderDel() {
 
   };
   var orders;
-  fetch("https://www.komfy.kr/orderDel", requestOptions)
+  fetch("/orderDel", requestOptions)
     .then(response => response.text())
     .then(result => {
       console.log(result);
-      location.href='https://www.komfy.kr/receiver.html'
+      location.href='/receiver.html'
     })
     .catch(error => console.log('error', error));
 }
@@ -192,7 +183,7 @@ var requestOptions = {
 };
 var orders;
 function initOrder(){
-  fetch("https://www.komfy.kr/orderLoad/1999-01-01", requestOptions)
+  fetch("/orderLoad/1999-01-01", requestOptions)
     .then(response => response.text())
     .then(result => {
       console.log(result);
@@ -225,11 +216,11 @@ headers: myHeaders,
 redirect: 'follow'
 };
 
-fetch("https://www.komfy.kr/orderCheck/"+i, requestOptions)
+fetch("/orderCheck/"+i, requestOptions)
 .then(response => response.text())
 .then(result => {
   console.log(result);
-  location.href='https://www.komfy.kr/receiver.html'})
+  location.href='/receiver.html'})
 .catch(error => console.log('error', error));
 }
 
@@ -243,11 +234,11 @@ headers: myHeaders,
 redirect: 'follow'
 };
 
-fetch("https://www.komfy.kr/orderCheck/"+i, requestOptions)
+fetch("/orderCheck/"+i, requestOptions)
 .then(response => response.text())
 .then(result => {
   console.log(result);
-  location.href='https://www.komfy.kr/receiver.html'})
+  location.href='/receiver.html'})
 .catch(error => console.log('error', error));
 
 
@@ -258,7 +249,7 @@ setInterval(()=>{
   if (orders.length > 0) {
     dateStr = orders[orders.length-1].date
   }
-  fetch("https://www.komfy.kr/orderLoad/"+dateStr, requestOptions)
+  fetch("/orderLoad/"+dateStr, requestOptions)
     .then(response => response.text())
     .then(result => {
       console.log(result);
@@ -286,8 +277,8 @@ function makeOrderHtml(result){
     order.menu.forEach((item, j) => {
       var menuText;
       allMenus.forEach((menu, k) => {
-        if(menu[item]!==undefined){
-          menuText = menu[item]
+        if(menu.id == item){
+          menuText = menu.name
         }
       });
       menuHtml+='*'+menuText+'<br>'

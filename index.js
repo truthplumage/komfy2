@@ -125,8 +125,6 @@ app.post('/order', (req, res)=>{
         };
   orderHolding.push(order)
   res.send(req.body.table)
-
-
 })
 
 app.get('/orderLoad/:orderDate', (req, res)=>{
