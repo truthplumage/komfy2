@@ -158,9 +158,10 @@ app.get('/getSubCate/',(req, res)=>{
   dbmanager.selectQuery(`select * from subCate join cate on subCate.cateIdx = cate.idx`, res)
 })
 app.post('/insertMenu/',async (req,res)=>{
+  console.log('insertMenu');
   let insertMenu = req.body.menu;
   let menu = await dbmanager.getQuery('select * from menu where id=?',[insertMenu.id])
-  if(menu){
+  if(menu&&menu.length>0){
     console.log(menu)
     res.status(400).send('already menu id');
     return
