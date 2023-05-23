@@ -13,52 +13,7 @@ fetch("/getMenus", requestOptions)
     console.log(result)
     res = JSON.parse(result)
     console.log(res);
-    let subTitle = ''
-      res.forEach((item)=>{
-        var html=''
-        if(mCategory==item.cateTitle){
-          if(subTitle!=item.subTitle){
-            subTitle = item.subTitle
-            $("#menus").append(`<h1>${item.subTitle}</h1>
-            <span class="btn" id="${item.idx}_move" onclick="changeOrder(${item.idx})">+Move</span>
-            <span class="btn" id="${item.idx}_moveOk" onclick="changeOrderComplete(${item.idx})">OK</span>
-            <span class="btn" id="${item.idx}_moveCancel" onclick="changeOrderCancel(${item.idx})">Cancel</span>
-            <br><div id="${mCategory+item.idx}_ul">`)
-            $(`#${item.idx}_moveOk`).hide()
-            $(`#${item.idx}_moveCancel`).hide()
-          }
-          $(`#${mCategory+item.idx}_ul`).append(`
-        <div class="menu-contents" id="${item.id}">
-          <div class="foods">
-            <div class="image">
-              <img src="${item.img}" id="${item.id}_img" alt="">
-              
-              <input type="file" id="${item.id}_imgFile">
-              
-            </div>
-  
-            <div class="text">
-              <input id="${item.id}_title" value='${item.title}' disabled>
-              <input id="${item.id}_price" value='${item.price}' disabled>
-              <input id="${item.id}_desc" type="none" value='${item.desc}' disabled>
-              <input id="${item.id}_manager" type="none" value="${item.manager}" disabled>
-              <input id="${item.id}_subcate" type="none" value="${item.subTitle}" disabled hidden>
-              
-              <div class="btn" id="${item.id}_modi" onclick="updateMenu('${item.id}')">수정</div>
-              <div class="btn" id="${item.id}_delete" onclick="deleteMenu('${item.id}')">삭제</div>
-              
-
-              <div class="btn" id="${item.id}_complete" onclick="completeMenu('${item.id}')">확인</div>
-              <div class="btn" id="${item.id}_cancel" onclick="cancelMenu('${item.id}')">취소</div>
-            </div>
-          </div>
-        
-        </div> `)
-        $(`#${item.id}_imgFile`).hide()
-        $(`#${item.id}_complete`).hide()
-        $(`#${item.id}_cancel`).hide()
-        }
-      })
+    menuShow(mCategory);
   })
   .catch(error => console.log('error', error));
   
@@ -165,7 +120,6 @@ fetch("/getMenus", requestOptions)
     fetch("/updateMenu/"+id + "/" + mCategory, requestOptions)
       .then(response => response.text())
       .then(result => {
-        console.log(result)
         if(isFile){
           fetch("/photo/"+id + "/" + mCategory, requestPhotoOptions)
           .then(response => response.text())
@@ -221,55 +175,43 @@ fetch("/getMenus", requestOptions)
     mCategory = category
     console.log(category)
     $('#menus').empty()
-    res.forEach(element => {
-      Object.keys(element).forEach(cate => {
-        
-        if(cate == category) {
-          element[cate].forEach((subCate,i) => {
-            $("#menus").append(`<h1>${subCate.title}</h1>
-            <span class="btn" id="${i}_move" onclick="changeOrder(${i})">+Move</span>
-            <span class="btn" id="${i}_moveOk" onclick="changeOrderComplete(${i})">OK</span>
-            <span class="btn" id="${i}_moveCancel" onclick="changeOrderCancel(${i})">Cancel</span>
-            <br><div id="${mCategory+i}_ul">
-            `)
-            $(`#${i}_moveOk`).hide()
-            $(`#${i}_moveCancel`).hide()
-
-            subCate.data.forEach(item => {
-              console.log(item);
-              $("#"+mCategory+i+'_ul').append(`
-
-              <div class="menu-contents" id="${item.id}">
-              <div class="foods">
-              <div class="image">
-              <img src="${item.img}" id="${item.id}_img" alt="">
-                
-              <input type="file" id="${item.id}_imgFile">
-                
-              </div>
-              
-              <div class="text">
-                <input id="${item.id}_title" value='${item.title}' disabled>
-                <input id="${item.id}_price" value='${item.price}' disabled>
-                <input id="${item.id}_desc" type="none" value='${item.desc}' class="desc"  disabled>
-                <input id="${item.id}_manager" type="none" value="${item.manager}" disabled>
-                <input id="${item.id}_subcate" type="none" value="${subCate.title}" disabled hidden>
-
-                <div class="btn" id="${item.id}_modi" onclick="updateMenu('${item.id}')">수정</div>
-                <div class="btn" id="${item.id}_delete" onclick="deleteMenu('${item.id}')">삭제</div>
-                <div class="btn" id="${item.id}_complete" onclick="completeMenu('${item.id}')">확인</div>
-                <div class="btn" id="${item.id}_cancel" onclick="cancelMenu('${item.id}')">취소</div>
-                </div>
-              </div>
-                
-              </div> `)
-              $(`#${item.id}_imgFile`).hide()
-              $(`#${item.id}_complete`).hide()
-              $(`#${item.id}_cancel`).hide()
-              
-            });
-          });
+    let subTitle = '';
+    res.forEach((item)=>{
+      var html=''
+      if(mCategory==item.cateTitle){
+        if(subTitle!=item.subTitle){
+          subTitle = item.subTitle
+          $("#menus").append(`<h1>${item.subTitle}</h1>
+          <span class="btn" id="${item.idx}_move" onclick="changeOrder(${item.idx})">+Move</span>
+          <span class="btn" id="${item.idx}_moveOk" onclick="changeOrderComplete(${item.idx})">OK</span>
+          <span class="btn" id="${item.idx}_moveCancel" onclick="changeOrderCancel(${item.idx})">Cancel</span>
+          <br><div id="${mCategory+item.idx}_ul">`)
+          $(`#${item.idx}_moveOk`).hide()
+          $(`#${item.idx}_moveCancel`).hide()
         }
-      });
-    });
+        $(`#${mCategory+item.idx}_ul`).append(`
+      <div class="menu-contents" id="${item.id}">
+        <div class="foods">
+          <div class="image">
+            <img src="${item.img}" id="${item.id}_img" alt="">
+            <input type="file" id="${item.id}_imgFile">
+          </div>
+          <div class="text">
+            <input id="${item.id}_title" value='${item.title}' disabled>
+            <input id="${item.id}_price" value='${item.price}' disabled>
+            <input id="${item.id}_desc" type="none" value='${item.desc}' disabled>
+            <input id="${item.id}_manager" type="none" value="${item.manager}" disabled>
+            <input id="${item.id}_subcate" type="none" value="${item.subTitle}" disabled hidden>
+            <div class="btn" id="${item.id}_modi" onclick="updateMenu('${item.id}')">수정</div>
+            <div class="btn" id="${item.id}_delete" onclick="deleteMenu('${item.id}')">삭제</div>
+            <div class="btn" id="${item.id}_complete" onclick="completeMenu('${item.id}')">확인</div>
+            <div class="btn" id="${item.id}_cancel" onclick="cancelMenu('${item.id}')">취소</div>
+          </div>
+        </div>
+      </div> `)
+      $(`#${item.id}_imgFile`).hide()
+      $(`#${item.id}_complete`).hide()
+      $(`#${item.id}_cancel`).hide()
+      }
+    })
   }

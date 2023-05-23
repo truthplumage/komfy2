@@ -4,6 +4,8 @@
 const fs = require('fs');
 const cors = require('cors');
 
+const url = '210.114.1.95';
+
 const bodyParser = require('body-parser');
 const orderHolding = [];
 const multer = require('multer');
@@ -18,6 +20,8 @@ const nodemailer = require('nodemailer');
 var http = require('http');
 var https = require('https');
 const DBManager = require('./dbManager/dbConnector');
+const { log } = require('console');
+let dbmanager = new DBManager();
 const upload = multer({
   // 파일 저장 위치 (disk , memory 선택)
   storage: multer.diskStorage({
@@ -36,20 +40,15 @@ const upload = multer({
 http.createServer(app
   // function(req, res){
   //   res.statusCode = 302;
-  //   res.setHeader('Location', 'https://210.114.1.95/index.html');
+  //   res.setHeader('Location', `https://${url}/index.html`);
   //   res.end();
   // }
   ).listen(80);
 
   var options = {
-      // pfx: fs.readFileSync('./secret/Convert/CA2A.pfx'),
-      // passphrase: 'p7opx54b'
-
       ca: fs.readFileSync('./secret/CA2A.crt.pem'),
       key: fs.readFileSync('./secret/CA2A.key.pem'),
       cert: fs.readFileSync('./secret/CA2A.unified.crt.pem')
-      // pfx: fs.readFileSync('./crt/savvyissafe_com.pfx')
-
     };
 
   https.createServer(options, app).listen(443, function () {
@@ -62,7 +61,7 @@ app.get('/', (req, res) => {
     // res.json({
     //     success: true,
     // });
-    res.redirect('https://210.114.1.95/index.html')
+    res.redirect(`https://${url}/index.html`)
 });
 
 
@@ -145,7 +144,6 @@ app.get('/orderLoad/:orderDate', (req, res)=>{
 
 app.get('/orderCheck/:orderNo',(req,res)=>{
   var date = new Date()
-
   orderHolding.forEach((item, i) => {
     if (item.date == req.params.orderNo) {
       item.status = 'checked'
@@ -153,164 +151,59 @@ app.get('/orderCheck/:orderNo',(req,res)=>{
       return
     }
   });
-
-
   console.log(JSON.stringify(orderHolding));
   res.send(orderHolding)
-
+})
+app.get('/getSubCate/',(req, res)=>{
+  dbmanager.selectQuery(`select * from subCate join cate on subCate.cateIdx = cate.idx`, res)
+})
+app.post('/insertMenu/',async (req,res)=>{
+  let insertMenu = req.body.menu;
+  let menu = await dbmanager.getQuery('select * from menu where id=?',[insertMenu.id])
+  if(menu){
+    console.log(menu)
+    res.status(400).send('already menu id');
+    return
+  }
+  let max = await dbmanager.getQuery('select max(idx)+1 idx from menu where subIdx=(select idx from subCate where subTitle =?)',[insertMenu.subCate])
+  console.log(max.idx)
+  console.log(insertMenu);
+  dbmanager.updateQuery('INSERT INTO menu (id, name, title, price, `desc`, onClick, manager, subIdx, idx) VALUES(?, ?, ?, ?, ?, ?, ?,(select idx subIdx from subCate where subTitle =?), ?);',
+  [insertMenu.id, insertMenu.name, insertMenu.title, insertMenu.price, insertMenu.desc, insertMenu.onClick, insertMenu.manager, insertMenu.subCate, max[0].idx], res)
 })
 
-app.post('/insertMenu/',(req,res)=>{
-  var menuFile = fs.readFileSync('./komfybar/menu.json')
-  var menus = JSON.parse(menuFile.toString())
-  var isDuplicate = false;
-  menus.forEach((cate, i) => {
-    if(req.body.menu.category == undefined) return
-    Object.keys(cate).forEach(key => {
-      if(key == req.body.menu.category) {
-        delete req.body.menu.category
-        cate[key].forEach((subCate) => {
-          if(subCate.title == req.body.menu.subCate) {
-            subCate.data.forEach((item, j) => {
-              if(item.id !== undefined && item.id == req.body.menu.id){
-                delete req.body.menu.subCate
-                subCate.data[j] = req.body.menu
-                isDuplicate = true
-              }  
-            })
-            if(isDuplicate==false) {
-              delete req.body.menu.subCate
-              subCate.data.push(req.body.menu)
-            }
-          }
-        });
-        return
-      }
-    });
-  });
-  
-  fs.writeFileSync('./komfybar/menu.json', JSON.stringify(menus))
-  res.send(menus)
-})
-
-app.delete('/deleteMenu/:menuId/:cate', (req,res)=>{
-  var menuFile = fs.readFileSync('./komfybar/menu.json')
-  console.log(menuFile.toString());
-  var menus = JSON.parse(menuFile.toString())
-  console.log(JSON.stringify(menus));
-  var isFind = false;
-  menus.forEach((cate, i) => {
-    Object.keys(cate).forEach ((key) => {
-      if(key == req.params.cate){
-        cate[key].forEach((subCate) =>{
-          subCate.data.forEach((item, j)=>{
-            if(item.id !== undefined && item.id == req.params.menuId){
-              subCate.data.splice(j, 1)
-              isFind = true
-              return
-            }
-          })
-          if(isFind) return
-        })
-        if(isFind) return
-      }
-    })
-    if(isFind) return
-  });
-  fs.writeFileSync('./komfybar/menu.json', JSON.stringify(menus))
-  res.send(menus)
+app.delete('/deleteMenu/:menuId/:cate', async (req,res)=>{
+  let result = await dbmanager.getQuery('select img from menu where id=?', [req.params.menuId])
+  fs.unlink(path.normalize("./komfybar"+result.img), function(err){
+    if(err) {
+      console.log("Error : ", err)
+    }
+  }) 
+  dbmanager.updateQuery(`DELETE FROM menu WHERE id=?;`, [req.params.menuId], res)
 })
 
 app.get('/getMenus',(req,res)=>{
-  let dbmanager = new DBManager();
   dbmanager.selectQuery(`select menu.manager, menu.onClick, menu.img, menu.desc, menu.price, menu.title, menu.name, menu.id, 
   cate.cateTitle, sc.subTitle, sc.idx from menu join subCate sc on sc.idx = menu.subIdx join cate on sc.cateIdx = cate.idx order by sc.idx, menu.idx asc;
   `, res)
 })
 
-app.put('/changeMenu',(req,res)=>{
+app.put('/changeMenu',async (req,res)=>{
   let body = req.body;
-  var menuFile = fs.readFileSync('./komfybar/menu.json')
-  var menus = JSON.parse(menuFile.toString())
-  var data, cate;
-  menus.forEach(menuCate=>{
-    if(menuCate[body.cate]){
-      cate = menuCate[body.cate]
-      data = cate[body.subcate].data
-      return;
-    }
-  })
-  var sortMenu = [];
-  body.menusId.forEach(id=>{
-    data.forEach(dt=>{
-      if(dt.id == id)
-      sortMenu.push(dt);
-    })
-  })
-  cate[body.subcate].data = sortMenu;
-  fs.writeFileSync('./komfybar/menu.json', JSON.stringify(menus))
-  res.send(menus)
+  console.log(body);
+  await dbmanager.getQuery('update menu set idx=null where subIdx=(select idx subIdx from subCate where idx =?)',[body.subcate])
+  body.menusId.forEach(async (id, i) => {
+    await dbmanager.getQuery('update menu set idx=? where id=?',[(i+1),id])
+  });
+  res.send(body.menusId)
 })
 
 app.put('/updateMenu/:menuId/:cate',(req,res)=>{
-  var menuFile = fs.readFileSync('./komfybar/menu.json')
-  var menus = JSON.parse(menuFile.toString())
-  var isFind = false
-  menus.forEach((cate, i) => {
-    Object.keys(cate).forEach((key) =>{
-      if(key == req.params.cate){
-        cate[key].forEach((subCate) => {
-          if(subCate.title==req.body.menu.subcate)
-          subCate.data.forEach((item, j)=>{
-            if(item.id !== undefined && item.id == req.params.menuId){
-              subCate.data[j].title = req.body.menu.title
-              subCate.data[j].name = req.body.menu.name
-              subCate.data[j].price = req.body.menu.price
-              subCate.data[j].desc = req.body.menu.desc
-              subCate.data[j].onClick = req.body.menu.onClick
-              subCate.data[j].manager = req.body.menu.manager
-
-              isFind = true
-              return
-            }
-          })
-          if(isFind) return
-        });
-        if(isFind) return
-      }
-    })
-    if(isFind) return
-  });
-  fs.writeFileSync('./komfybar/menu.json', JSON.stringify(menus))
-  res.send(menus)
+  let menu = req.body.menu
+  dbmanager.updateQuery(`update menu m SET m.name=?, m.title=?, m.price=?, m.desc=?, m.onClick=?, m.manager=? WHERE m.id=?;`, [menu.name, menu.title, menu.price, menu.desc, menu.onClick, menu.manager, menu.id], res)
 })
 
 app.post('/photo/:menuId/:cate', upload.single('file'), function (req, res, next) {
-  console.log('photo');
-  var menuFile = fs.readFileSync('./komfybar/menu.json')
-  var menus = JSON.parse(menuFile.toString())
   console.log(JSON.stringify(req.params));
-  var isFind = false;
-  menus.forEach((cate, i) => {
-    Object.keys(cate).forEach((key)=>{
-      if(key == req.params.cate)
-      cate[key].forEach((subCate) => {
-        subCate.data.forEach((item, j)=>{
-          if(item.id !== undefined && item.id == req.params.menuId){
-            console.log(JSON.stringify(item))
-            subCate.data[j].img = '/images/'+req.file.filename            
-            isFind = true;
-            return; 
-          }
-        })
-        if(isFind) return
-      })
-      if(isFind) return
-    })
-    if(isFind) return
-  })
-  fs.writeFileSync('./komfybar/menu.json', JSON.stringify(menus))
-  //업로드 정보 확인
-  console.log(req.file);
-  res.send('upload success.');
+  dbmanager.updateQuery(`update menu SET img=? WHERE id=?;`, ['/images/'+req.file.filename, req.params.menuId], res)
 });

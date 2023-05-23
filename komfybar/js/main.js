@@ -1,4 +1,5 @@
 var myHeaders = new Headers();
+const url = '210.114.1.95';
 myHeaders.append("Content-Type", "application/json");
 var requestOptions = {
   method: 'GET',
@@ -41,7 +42,7 @@ var menuArr = [];
 var isOrder = false;
 var tableName = location.search.split('table=')[1]
 if(tableName == undefined){
-  location.href='https://localhost/reqr.html' // qr로 재 유도하는 페이지
+  location.href=`https://${url}/reqr.html` // qr로 재 유도하는 페이지
 }
 
 $(document).ready(function(){
@@ -97,11 +98,11 @@ function order(){
     redirect: 'follow'
   };
 
-  fetch("https://localhost/order", requestOptions)
+  fetch(`https://${url}//order`, requestOptions)
     .then(response => response.text())
     .then(result => {
       console.log(result)
-      location.href="https://localhost/afterorder.html" // 주문 후 손님이 보는 페이지
+      location.href=`https://${url}/afterorder.html` // 주문 후 손님이 보는 페이지
     })
     .catch(error => console.log('error', error));
   }
@@ -161,11 +162,11 @@ $('.option').hide();
 $('.option.whisky1').hide();
 
 
- function optionPopUpShow() {
-   $('.option').show()
-   
- }
- 
- function optionPopUpHide() {
-    $('.option').hide()
- }
+function optionPopUpShow() {
+  $('.option').show()
+  
+}
+
+function optionPopUpHide() {
+  $('.option').hide()
+}

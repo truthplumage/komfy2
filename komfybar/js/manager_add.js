@@ -7,28 +7,24 @@ var requestOptions = {
 };
 var subCateOptions = {}
 var res
-fetch("https://www.komfy.kr/getMenus", requestOptions)
-    .then(response => response.text())
-    .then(result => {
-      res = JSON.parse(result)
-      let htmlCate = ''
-      res.forEach(cate=>{
-        Object.keys(cate).forEach(key=>{
-          if(cate[key]!=undefined){
-            if(subCateOptions[key] == undefined){
-              subCateOptions[key] = []
-            }
-            htmlCate += `<option value="${key}">${key}</option>`
-            cate[key].forEach(subCate => { 
-              subCateOptions[key].push(`<option value="${subCate.title}">${subCate.title}</option>`)
-            })
-          }
-        })
-      })
-      $('#category').html(htmlCate)
-      cateChange()
-    })
-    .catch(error => console.log('error', error));
+
+async function cateMaker(){
+  let response = await fetch("/getSubCate", requestOptions)
+  res = await response.json()
+  htmlCate = '';
+  res.forEach(cate=>{
+    if(cate!=undefined){
+      if(subCateOptions[cate.cateTitle] == undefined){
+        subCateOptions[cate.cateTitle] = []
+        htmlCate += `<option value="${cate.cateTitle}">${cate.cateTitle}</option>`
+      }
+      subCateOptions[cate.cateTitle].push(`<option value="${cate.subTitle}">${cate.subTitle}</option>`)
+    }
+  })
+  $('#category').html(htmlCate)
+  cateChange()
+}
+cateMaker();
 function cateChange(){
   console.log('abc');
   var subCateHtml = ''
@@ -38,7 +34,7 @@ function cateChange(){
   console.log(subCateHtml);
   $('#subCate').html(subCateHtml)
 }
-function menuAdd() {
+async function menuAdd() {
   if(checker('price', '가격을')) return;
   if(checker('title', '이름을')) return;
   if(checker('id', 'id를')) return;
@@ -81,24 +77,22 @@ function menuAdd() {
       body: JSON.stringify(raw),
       redirect: 'follow'
     };
-
-    fetch("https://www.komfy.kr/insertMenu/", requestOptions)
-      .then(response => response.text())
-      .then(result => {
-        console.log(result)
-        if(isFile){
-          fetch("https://www.komfy.kr/photo/"+$('#id').val()+"/"+$('#category').val(), requestPhotoOptions)
-          .then(response => response.text())
-          .then(result => alert("메뉴가 등록되었습니다."))
-          .catch(error => console.log('error', error));
-        }else{
-          alert("메뉴가 등록되었습니다.")
-        }
-      })
-      .catch(error => console.log('error', error));
-    
-
-    
+    try{
+      let response = await fetch(`https://${url}/insertMenu`, requestOptions);
+      let json = await response.json();
+      console.log(json);
+      if(isFile){
+        let photoRes = await fetch(`https://${url}/photo/${$('#id').val()}/${$('#category').val()}`, requestPhotoOptions);
+        let photoJson = await photoRes.json()
+        console.log(photoJson);
+        alert("메뉴가 등록되었습니다.")
+      }else{
+        alert("메뉴가 등록되었습니다.")
+      }
+    }catch(e){
+      console.log(e);
+      alert('중복된 아이디가 있습니다.')
+    }
 }
 
 function checker(id, desc) {
