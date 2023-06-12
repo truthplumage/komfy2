@@ -7,7 +7,7 @@ const cors = require('cors');
 // const url = '1.234.80.76';
 
 const bodyParser = require('body-parser');
-const orderHolding = [];
+let orderHolding = [];
 const multer = require('multer');
 const express = require('express');
 const app = express();
