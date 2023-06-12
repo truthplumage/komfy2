@@ -1,5 +1,5 @@
 var myHeaders = new Headers();
-const url = '210.114.1.95';
+const url = 'http://barkomfy2.cafe24.com/';
 myHeaders.append("Content-Type", "application/json");
 var requestOptions = {
   method: 'GET',

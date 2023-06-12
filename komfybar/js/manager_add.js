@@ -1,5 +1,5 @@
 var myHeaders = new Headers();
-const url = '210.114.1.95';
+const url = 'barkomfy2.cafe24.com';
 myHeaders.append("Content-Type", "application/json");
 var requestOptions = {
   method: 'GET',
@@ -79,11 +79,11 @@ async function menuAdd() {
       redirect: 'follow'
     };
     try{
-      let response = await fetch(`https://${url}/insertMenu`, requestOptions);
+      let response = await fetch(`http://${url}/insertMenu/`, requestOptions);
       let json = await response.json();
       console.log(json);
       if(isFile){
-        let photoRes = await fetch(`https://${url}/photo/${$('#id').val()}/${$('#category').val()}`, requestPhotoOptions);
+        let photoRes = await fetch(`http://${url}/photo/${$('#id').val()}/${$('#category').val()}`, requestPhotoOptions);
         let photoJson = await photoRes.json()
         console.log(photoJson);
         alert("메뉴가 등록되었습니다.")

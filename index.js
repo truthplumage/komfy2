@@ -4,7 +4,7 @@
 const fs = require('fs');
 const cors = require('cors');
 
-const url = '210.114.1.95';
+// const url = '1.234.80.76';
 
 const bodyParser = require('body-parser');
 const orderHolding = [];
@@ -61,7 +61,7 @@ app.get('/', (req, res) => {
     // res.json({
     //     success: true,
     // });
-    res.redirect(`https://${url}/index.html`)
+    res.redirect(`/index.html`)
 });
 
 
