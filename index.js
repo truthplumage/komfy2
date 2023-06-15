@@ -4,7 +4,7 @@
 const fs = require('fs');
 const cors = require('cors');
 
-const url = '210.114.1.95';
+const url = 'komfy.kr';
 
 const bodyParser = require('body-parser');
 const orderHolding = [];

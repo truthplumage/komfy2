@@ -1,5 +1,5 @@
 var myHeaders = new Headers();
-const url = '210.114.1.95';
+const url = 'komfy.kr';
 myHeaders.append("Content-Type", "application/json");
 var requestOptions = {
   method: 'GET',
@@ -79,7 +79,7 @@ async function menuAdd() {
       redirect: 'follow'
     };
     try{
-      let response = await fetch(`https://${url}/insertMenu`, requestOptions);
+      let response = await fetch(`https://${url}/insertMenu/`, requestOptions);
       let json = await response.json();
       console.log(json);
       if(isFile){

@@ -4,7 +4,7 @@ const { resolve } = require('path');
 module.exports = class DBManager{
     constructor(){
         this.connection = mysql.createConnection({  
-            host    : '210.114.1.95',   
+            host    : '127.0.0.1',   
             user    : 'komfy_admin', 
             password    : 'Mild1358!',   
             database    : 'komfy'  

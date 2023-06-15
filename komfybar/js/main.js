@@ -1,5 +1,4 @@
 var myHeaders = new Headers();
-const url = '210.114.1.95';
 myHeaders.append("Content-Type", "application/json");
 var requestOptions = {
   method: 'GET',
